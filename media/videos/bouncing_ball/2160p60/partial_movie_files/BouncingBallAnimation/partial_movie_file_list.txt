@@ -1,5 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/sathwikbadda/Assigment/Manim-Assignment/media/videos/bouncing_ball/2160p60/partial_movie_files/BouncingBallAnimation/2435782316_703915548_223132457.mp4'
-file 'file:/Users/sathwikbadda/Assigment/Manim-Assignment/media/videos/bouncing_ball/2160p60/partial_movie_files/BouncingBallAnimation/1178781487_1645748155_80478022.mp4'
-file 'file:/Users/sathwikbadda/Assigment/Manim-Assignment/media/videos/bouncing_ball/2160p60/partial_movie_files/BouncingBallAnimation/1178781487_3155167361_4269038916.mp4'
-file 'file:/Users/sathwikbadda/Assigment/Manim-Assignment/media/videos/bouncing_ball/2160p60/partial_movie_files/BouncingBallAnimation/1178781487_2569161387_534323735.mp4'
