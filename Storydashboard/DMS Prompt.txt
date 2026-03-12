@@ -1,0 +1,34 @@
+You are given Manim source code, and your task is to generate a deterministic, code-faithful instruction set that allows the animation to be re-created exactly. This is not a summary, explanation, or abstraction of the code. It is a complete reconstruction guide written in precise, structured prose that mirrors the execution order of the code line by line.
+
+You must remember and obey all prior constraints provided earlier in the conversation. Never mention run time anywhere, even if it exists in the code. Do not omit it silently; simply exclude it entirely from the output. The output must be placed inside a single code window. The output does not need to be Markdown beyond being wrapped in a code window, but the content must be clean, linear, and readable. Do not use bullet points, numbering, or headings.
+
+The output must describe relative positioning of every visual element explicitly. Every object’s position must be stated using the exact vectors used in the code, such as ORIGIN, UP, DOWN, LEFT, RIGHT, OUT, or scaled and combined vectors like UP*0.15, RIGHT*2 + DOWN*0.5, or np.array([...]). If objects are arranged relative to one another, such as via arrange, next_to, align_to, shift, or move_to, you must explain the spatial relationship numerically and directionally, including buffer values and alignment edges.
+
+Your output must not read like a storyboard or a narrative. It must read like a precise execution trace translated into natural language instructions. Someone should be able to recreate the original Manim code purely from your output without guessing or filling in gaps.
+
+Do not summarize, generalize, or compress information. Nothing that exists in the code may be omitted, implied, or inferred. Every visual element, helper function, variable, constant, color value, scale factor, position vector, dimension, opacity value, animation type, animation order, and rate function must be explicitly stated in words.
+
+If a variable is defined, you must explain its definition and later explain how and where it is used. If dimensions or positions are computed from variables, you must describe the variables and their resolved meaning. If positions are stored in arrays or lists, every element must be described in order, including any implied semantic meaning such as top-left, center, or bottom-right.
+
+All colors must be mentioned with their exact Manim color constants or hex values, and you must state which object uses which color and at what stage. If gradients are used, list all gradient colors in order and specify the direction of the gradient. If opacity changes occur, explicitly state the starting and ending opacity values.
+
+All scale operations must include exact numeric scale factors. This includes initial scales, intermediate scales, inverse scales such as 1/15 or 1/0.2, and final scales such as 0.1, 0.001, or 300. If an animation scales an object from one value to another, both the source scale and destination scale must be stated explicitly. If save_state and restore are used, you must explain the saved state and how restoration affects scale, position, and opacity.
+
+Every animation must be described exhaustively. You must name the exact animation constructs used, such as FadeIn, FadeOut, Create, Uncreate, Write, AddTextLetterByLetter, Rotate, UpdateFromAlphaFunc, AnimationGroup, LaggedStart, or camera movement functions. You must state which objects are animated, whether animations are grouped or nested, the order of execution, and how the visual behavior unfolds.
+
+Every rate function must be named explicitly, such as linear, smooth, there_and_back, ease_in_back, ease_out_back, ease_in_expo, rush_into, or any other function used. Do not replace rate functions with descriptive language alone. If a comment in code describes the “feel” of a rate function, still prioritize naming the mathematical function.
+
+If helper functions exist, such as create_bubble, make_icon, update_spiral, or similar, you must state that they are defined, list their parameters, explain what objects they construct or modify, and explain how and where they are invoked later. If conditional logic exists, such as an is_ai flag, you must describe all branches and clearly state which branch is executed in each usage.
+
+If camera configuration exists, you must describe camera background color, orientation, frame size, and any camera movement. If the camera moves, you must state exact phi, theta, and gamma values and explain the resulting perspective change. If the scene transitions between 2D and 3D behavior, this must be stated explicitly.
+
+If text is created, you must specify the exact string content, font family, font size, font weight, color or gradient, alignment, initial scale, initial opacity, and relative placement to other text. If text appears character by character, you must state that explicitly and describe the mechanism used. If text appears as a whole, that must also be stated.
+
+If objects are grouped using VGroup or Group, you must list every object inside the group, explain why grouping is used, and describe whether animations target the group as a whole or individual elements within it. If objects are added to or removed from the scene, you must state exactly when and why that occurs.
+
+If configuration settings exist at the bottom of the file, such as resolution, frame rate, caching, renderer, or output configuration, you must describe them as system context even if they do not directly produce visible animation.
+
+The final output must be an instruction set to recreate the code, not a description of what the animation looks like. If any detail present in the source code is missing from your output, the result is incorrect.
+
+Output Format: Markdown; Generate it in a Code Window
+Input Code: 

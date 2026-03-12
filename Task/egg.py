@@ -1,255 +1,128 @@
 from manim import *
 import numpy as np
 
-class EggToChickenTransform(Scene):
-    def construct(self):
-        # Set background color - light, child-friendly
-        self.camera.background_color = "#FFF9F0"
-        
-        # Create shadow (stays on ground, not part of transform)
-        shadow = self.create_shadow()
-        shadow.shift(DOWN * 2.5)
-        
-        # Create egg
-        egg = self.create_egg()
-        egg.shift(DOWN * 0.3)
-        
-        # Create chicken (same size/position for smooth transform)
-        chicken = self.create_chicken()
-        chicken.shift(DOWN * 0.3)
-        
-        # Phase 1: Egg appears with shadow
-        self.play(
-            FadeIn(shadow, scale=0.9),
-            FadeIn(egg, scale=0.8),
-            run_time=1.0
-        )
-        self.wait(0.5)
-        
-        # Phase 2: Egg wobbles (about to hatch)
-        for _ in range(3):
-            self.play(
-                Rotate(egg, angle=10 * DEGREES, about_point=egg.get_bottom()),
-                run_time=0.2
-            )
-            self.play(
-                Rotate(egg, angle=-20 * DEGREES, about_point=egg.get_bottom()),
-                run_time=0.2
-            )
-            self.play(
-                Rotate(egg, angle=10 * DEGREES, about_point=egg.get_bottom()),
-                run_time=0.2
-            )
-        
-        self.wait(0.3)
-        
-        # Phase 3: Create crack lines on egg
-        cracks = self.create_cracks()
-        cracks.move_to(egg.get_center())
-        
-        self.play(
-            Create(cracks),
-            run_time=0.8
-        )
-        self.wait(0.3)
-        
-        # Phase 4: Egg splits into two halves
-        top_shell, bottom_shell = self.create_egg_shells()
-        top_shell.move_to(egg.get_center() + UP * 0.3)
-        bottom_shell.move_to(egg.get_center() + DOWN * 0.3)
-        
-        # Remove egg and cracks, add shells
-        self.play(
-            FadeOut(egg),
-            FadeOut(cracks),
-            FadeIn(top_shell),
-            FadeIn(bottom_shell),
-            run_time=0.3
-        )
-        
-        # Shells move apart
-        self.play(
-            top_shell.animate.shift(UP * 1.2 + LEFT * 0.5).rotate(20 * DEGREES),
-            bottom_shell.animate.shift(DOWN * 0.3 + RIGHT * 0.5).rotate(-15 * DEGREES),
-            run_time=0.8,
-            rate_func=smooth
-        )
-        
-        self.wait(0.2)
-        
-        # Phase 5: Transform into chicken (chicken appears in place)
-        chicken_shadow = self.create_shadow(width=1.8, height=0.35)
-        chicken_shadow.shift(DOWN * 2.5)
-        
-        self.play(
-            FadeIn(chicken, scale=0.6),
-            Transform(shadow, chicken_shadow),
-            run_time=0.8
-        )
-        
-        # Shells fall away
-        self.play(
-            FadeOut(top_shell, shift=UP * 0.5 + LEFT * 0.5),
-            FadeOut(bottom_shell, shift=DOWN * 0.5 + RIGHT * 0.5),
-            run_time=0.5
-        )
-        
-        # Phase 6: Chicken bounce
-        self.play(
-            chicken.animate.shift(UP * 0.2),
-            shadow.animate.scale(0.9),
-            run_time=0.25,
-            rate_func=smooth
-        )
-        self.play(
-            chicken.animate.shift(DOWN * 0.2),
-            shadow.animate.scale(1/0.9),
-            run_time=0.3,
-            rate_func=smooth
-        )
-        
-        # Small second bounce
-        self.play(
-            chicken.animate.shift(UP * 0.1),
-            shadow.animate.scale(0.95),
-            run_time=0.2,
-            rate_func=smooth
-        )
-        self.play(
-            chicken.animate.shift(DOWN * 0.1),
-            shadow.animate.scale(1/0.95),
-            run_time=0.25,
-            rate_func=smooth
-        )
-        
-        self.wait(0.5)
-        
-        # Phase 7: Happy chirp animation - wings flap
-        self.play(
-            chicken[4].animate.rotate(20 * DEGREES),  # Left wing
-            chicken[5].animate.rotate(-20 * DEGREES),  # Right wing
-            run_time=0.3,
-            rate_func=there_and_back
-        )
-        
-        self.wait(1.5)
+class Egg(VGroup):
+    """
+    A Manim VGroup representing a simple Egg.
     
-    def create_shadow(self, width=1.8, height=0.35):
+    Attributes:
+        body (Ellipse): The main egg shape.
+        highlight (Ellipse): A subtle shine/reflection to give 3D volume.
+    """
+    def __init__(self, **kwargs):
         """
-        Creates a soft ground shadow using an ellipse.
+        Initializes the Egg object.
         
         Args:
-            width: Shadow width
-            height: Shadow height (flattened)
-        
-        Returns:
-            Ellipse object representing shadow
+            **kwargs: Arbitrary keyword arguments (e.g., color, opacity) passed to VGroup.
         """
-        shadow = Ellipse(
-            width=width,
-            height=height,
-            fill_color=BLACK,
-            fill_opacity=0.12,
-            stroke_width=0
-        )
-        return shadow
-    
-    def create_egg(self):
-        """
-        Creates an egg using an ellipse.
+        super().__init__(**kwargs)
         
-        Returns:
-            VGroup containing egg shape
-        """
-        # Colors
-        EGG_WHITE = "#FFFEF7"
-        EGG_OUTLINE = "#D4C5B9"
+        # Color constants
+        self.EGG_WHITE = "#FFFEF7"   # Off-white for the egg shell
+        self.EGG_OUTLINE = "#D4C5B9" # Soft gray-brown for the outline
         
-        # Main egg body - tall ellipse
-        egg_body = Ellipse(
+        self.body = None
+        self.highlight = None
+        
+        self._build_parts()
+
+    def _build_parts(self):
+        """Constructs the egg's geometry."""
+        # Main egg body - a tall ellipse
+        self.body = Ellipse(
             width=1.6,
             height=2.2,
-            fill_color=EGG_WHITE,
+            fill_color=self.EGG_WHITE,
             fill_opacity=1,
-            stroke_color=EGG_OUTLINE,
+            stroke_color=self.EGG_OUTLINE,
             stroke_width=4
         )
         
-        # Subtle highlight for 3D effect
-        highlight = Ellipse(
+        # Highlight - a smaller, semi-transparent white ellipse
+        # This adds a specular highlight effect appearing at the top-left
+        self.highlight = Ellipse(
             width=0.4,
             height=0.6,
             fill_color=WHITE,
-            fill_opacity=0.3,
+            fill_opacity=0.3, # Low opacity for subtle shine
             stroke_width=0
         ).shift(LEFT * 0.3 + UP * 0.4)
         
-        egg_group = VGroup(egg_body, highlight)
-        return egg_group
-    
-    def create_cracks(self):
+        self.add(self.body, self.highlight)
+
+    def get_subcomponent(self, part_name: str):
         """
-        Creates crack lines on the egg.
+        Access subcomponents by name.
         
+        Args:
+            part_name (str): Name of the component attribute.
+            
         Returns:
-            VGroup containing crack lines
+            VMobject: The requested component.
         """
-        CRACK_COLOR = "#8B7355"
-        
-        cracks = VGroup()
-        
-        # Main vertical crack
-        crack1 = Line(
-            start=UP * 0.5,
-            end=DOWN * 0.8,
-            stroke_color=CRACK_COLOR,
-            stroke_width=3
-        )
-        
-        # Branch cracks
-        crack2 = Line(
-            start=UP * 0.2 + LEFT * 0.1,
-            end=LEFT * 0.4 + UP * 0.5,
-            stroke_color=CRACK_COLOR,
-            stroke_width=2.5
-        )
-        
-        crack3 = Line(
-            start=ORIGIN,
-            end=RIGHT * 0.5,
-            stroke_color=CRACK_COLOR,
-            stroke_width=2.5
-        )
-        
-        crack4 = Line(
-            start=DOWN * 0.3 + RIGHT * 0.05,
-            end=RIGHT * 0.3 + DOWN * 0.7,
-            stroke_color=CRACK_COLOR,
-            stroke_width=2
-        )
-        
-        crack5 = Line(
-            start=DOWN * 0.5 + LEFT * 0.05,
-            end=LEFT * 0.35 + DOWN * 0.6,
-            stroke_color=CRACK_COLOR,
-            stroke_width=2
-        )
-        
-        cracks.add(crack1, crack2, crack3, crack4, crack5)
-        return cracks
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in Egg")
+
+    def set_color(self, part_name: str, color: str):
+        """
+        Sets the color of a specific subcomponent while preserving opacity logic.
+        """
+        component = self.get_subcomponent(part_name)
+        if component:
+            c = ManimColor(color)
+            if isinstance(component, VMobject):
+                component.set_color(c)
+                if component.get_fill_opacity() > 0:
+                     # Maintain reduced opacity for the highlight
+                     opacity = 0.3 if "highlight" in part_name else 1
+                     component.set_fill(c, opacity=opacity)
+
+    def animate_manipulation(self, part_name: str, animation_type: str = "Indicate", **kwargs):
+        """Helper to create animations for specific parts."""
+        component = self.get_subcomponent(part_name)
+        if not component:
+             return Wait(0.1)
+             
+        if animation_type == "Indicate":
+            return Indicate(component, **kwargs)
+        elif animation_type == "Wiggle":
+            return Wiggle(component, **kwargs)
+        elif animation_type == "Flash":
+            return Flash(component, **kwargs)
+        else:
+            return Wait(0.1)
+
+
+class EggShells(VGroup):
+    """
+    A Manim VGroup representing cracked egg shells (top and bottom).
     
-    def create_egg_shells(self):
-        """
-        Creates two egg shell halves.
+    Attributes:
+        top_shell (Polygon): The upper half of the cracked egg.
+        top_inner (Line): The jagged edge of the top shell.
+        bottom_shell (Polygon): The lower half of the cracked egg.
+        bottom_inner (Line): The jagged edge of the bottom shell.
+    """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         
-        Returns:
-            Tuple of (top_shell, bottom_shell)
-        """
-        EGG_WHITE = "#FFFEF7"
-        EGG_OUTLINE = "#D4C5B9"
-        INNER_COLOR = "#FFF8E7"
+        self.EGG_WHITE = "#FFFEF7"
+        self.EGG_OUTLINE = "#D4C5B9"
+        self.INNER_COLOR = "#FFF8E7" # Slightly darker for the inside of the shell
         
-        # Top shell - curved polygon
+        self.top_shell = None
+        self.top_inner = None
+        self.bottom_shell = None
+        self.bottom_inner = None
+        
+        self._build_parts()
+        
+    def _build_parts(self):
+        """Constructs the cracked shell geometry."""
+        
+        # Top shell - custom polygon approximating a cracked dome
         top_points = [
             LEFT * 0.8,
             LEFT * 0.6 + UP * 0.3,
@@ -258,29 +131,27 @@ class EggToChickenTransform(Scene):
             RIGHT * 0.3 + UP * 0.8,
             RIGHT * 0.6 + UP * 0.3,
             RIGHT * 0.8,
-            RIGHT * 0.5 + DOWN * 0.1,
-            LEFT * 0.5 + DOWN * 0.1,
+            RIGHT * 0.5 + DOWN * 0.1, # Crack start right
+            LEFT * 0.5 + DOWN * 0.1,  # Crack start left
         ]
         
-        top_shell = Polygon(
+        self.top_shell = Polygon(
             *top_points,
-            fill_color=EGG_WHITE,
+            fill_color=self.EGG_WHITE,
             fill_opacity=1,
-            stroke_color=EGG_OUTLINE,
+            stroke_color=self.EGG_OUTLINE,
             stroke_width=4
         ).round_corners(radius=0.15)
         
-        # Inner edge of top shell (jagged break)
-        top_inner = Line(
+        # Inner edge of top shell - represents the jagged break line
+        self.top_inner = Line(
             start=LEFT * 0.5 + DOWN * 0.1,
             end=RIGHT * 0.5 + DOWN * 0.1,
-            stroke_color=INNER_COLOR,
+            stroke_color=self.INNER_COLOR,
             stroke_width=6
-        ).move_to(top_shell.get_bottom() + UP * 0.05)
+        ).move_to(self.top_shell.get_bottom() + UP * 0.05)
         
-        top_shell_group = VGroup(top_shell, top_inner)
-        
-        # Bottom shell
+        # Bottom shell - complementary shape to the top
         bottom_points = [
             LEFT * 0.8,
             LEFT * 0.6 + DOWN * 0.3,
@@ -289,191 +160,227 @@ class EggToChickenTransform(Scene):
             RIGHT * 0.3 + DOWN * 0.7,
             RIGHT * 0.6 + DOWN * 0.3,
             RIGHT * 0.8,
-            RIGHT * 0.5 + UP * 0.1,
-            LEFT * 0.5 + UP * 0.1,
+            RIGHT * 0.5 + UP * 0.1, # Crack start right
+            LEFT * 0.5 + UP * 0.1,  # Crack start left
         ]
         
-        bottom_shell = Polygon(
+        self.bottom_shell = Polygon(
             *bottom_points,
-            fill_color=EGG_WHITE,
+            fill_color=self.EGG_WHITE,
             fill_opacity=1,
-            stroke_color=EGG_OUTLINE,
+            stroke_color=self.EGG_OUTLINE,
             stroke_width=4
         ).round_corners(radius=0.15)
         
         # Inner edge of bottom shell
-        bottom_inner = Line(
+        self.bottom_inner = Line(
             start=LEFT * 0.5 + UP * 0.1,
             end=RIGHT * 0.5 + UP * 0.1,
-            stroke_color=INNER_COLOR,
+            stroke_color=self.INNER_COLOR,
             stroke_width=6
-        ).move_to(bottom_shell.get_top() + DOWN * 0.05)
+        ).move_to(self.bottom_shell.get_top() + DOWN * 0.05)
         
-        bottom_shell_group = VGroup(bottom_shell, bottom_inner)
-        
-        return top_shell_group, bottom_shell_group
+        self.add(self.top_shell, self.top_inner, self.bottom_shell, self.bottom_inner)
+
+    def get_subcomponent(self, part_name: str):
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in EggShells")
+
+
+class Chicken(VGroup):
+    """
+    A Manim VGroup representing a cute Chicken character.
     
-    def create_chicken(self):
-        """
-        Creates a baby chicken using basic shapes.
-        Components: body, head, wings, beak, eyes, feet
+    Attributes:
+        body (Circle): Main body.
+        head (Circle): Head.
+        tuft1/2/3 (Circle): Feathers on top of the head.
+        left/right_wing (Ellipse): Wings.
+        beak (Polygon): Orange beak.
+        left/right_eye_... (Circle): Detailed eyes with pupils and highlights.
+        left/right_foot (Polygon): Feet.
+        left/right_blush (Ellipse): Pink cheeks.
+    """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         
-        Returns:
-            VGroup containing all chicken parts
-        """
-        # Color palette
-        CHICK_YELLOW = "#FFD93D"
-        CHICK_DARK = "#F7C02B"
-        BEAK_ORANGE = "#FF8B3D"
-        EYE_BLACK = "#2C2C2C"
-        FEET_ORANGE = "#FF9E4F"
-        OUTLINE = "#E0AC2D"
+        self.CHICK_YELLOW = "#FFD93D" # Bright yellow
+        self.CHICK_DARK = "#F7C02B"   # Darker yellow for wings/details
+        self.BEAK_ORANGE = "#FF8B3D"
+        self.EYE_BLACK = "#2C2C2C"
+        self.FEET_ORANGE = "#FF9E4F"
+        self.OUTLINE = "#E0AC2D"
         
-        # Body - large circle
-        body = Circle(
+        self.body = None
+        self.head = None
+        self.tuft1 = None
+        self.tuft2 = None
+        self.tuft3 = None
+        self.left_wing = None
+        self.right_wing = None
+        self.beak = None
+        self.left_eye_white = None
+        self.left_eye_pupil = None
+        self.left_eye_shine = None
+        self.right_eye_white = None
+        self.right_eye_pupil = None
+        self.right_eye_shine = None
+        self.left_foot = None
+        self.right_foot = None
+        self.left_blush = None
+        self.right_blush = None
+        
+        self._build_parts()
+
+    def _build_parts(self):
+        """Builds all chicken parts."""
+        
+        # Body - large circle base
+        self.body = Circle(
             radius=0.9,
-            fill_color=CHICK_YELLOW,
+            fill_color=self.CHICK_YELLOW,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=3
         )
         
-        # Head - slightly smaller circle
-        head = Circle(
+        # Head - smaller circle stacked on body
+        self.head = Circle(
             radius=0.65,
-            fill_color=CHICK_YELLOW,
+            fill_color=self.CHICK_YELLOW,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=3
         ).shift(UP * 0.9)
         
-        # Fluffy tuft on head - small circles
-        tuft1 = Circle(
+        # Fluffy tuft on head - three small circles
+        self.tuft1 = Circle(
             radius=0.15,
-            fill_color=CHICK_YELLOW,
+            fill_color=self.CHICK_YELLOW,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(UP * 1.5)
         
-        tuft2 = Circle(
+        self.tuft2 = Circle(
             radius=0.12,
-            fill_color=CHICK_YELLOW,
+            fill_color=self.CHICK_YELLOW,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(LEFT * 0.15 + UP * 1.45)
         
-        tuft3 = Circle(
+        self.tuft3 = Circle(
             radius=0.12,
-            fill_color=CHICK_YELLOW,
+            fill_color=self.CHICK_YELLOW,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(RIGHT * 0.15 + UP * 1.45)
         
-        # Left wing - teardrop shape (ellipse rotated)
-        left_wing = Ellipse(
+        # Wings - Teardrop shapes created by rotating ellipses
+        self.left_wing = Ellipse(
             width=0.5,
             height=0.8,
-            fill_color=CHICK_DARK,
+            fill_color=self.CHICK_DARK,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=3
         ).rotate(30 * DEGREES).shift(LEFT * 0.7 + DOWN * 0.1)
         
-        # Right wing
-        right_wing = Ellipse(
+        self.right_wing = Ellipse(
             width=0.5,
             height=0.8,
-            fill_color=CHICK_DARK,
+            fill_color=self.CHICK_DARK,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=3
         ).rotate(-30 * DEGREES).shift(RIGHT * 0.7 + DOWN * 0.1)
         
-        # Beak - small triangle
-        beak = Polygon(
+        # Beak - small Triangle
+        self.beak = Polygon(
             UP * 0.05,
             LEFT * 0.12 + DOWN * 0.1,
             RIGHT * 0.12 + DOWN * 0.1,
-            fill_color=BEAK_ORANGE,
+            fill_color=self.BEAK_ORANGE,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(UP * 0.75)
         
-        # Left eye
-        left_eye_white = Circle(
+        # Eyes - layered circles (White -> Pupil -> Shine)
+        # Left Eye
+        self.left_eye_white = Circle(
             radius=0.18,
             fill_color=WHITE,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(LEFT * 0.22 + UP * 1.0)
         
-        left_eye_pupil = Circle(
+        self.left_eye_pupil = Circle(
             radius=0.09,
-            fill_color=EYE_BLACK,
+            fill_color=self.EYE_BLACK,
             fill_opacity=1,
             stroke_width=0
         ).shift(LEFT * 0.22 + UP * 1.0)
         
-        left_eye_shine = Circle(
+        self.left_eye_shine = Circle(
             radius=0.04,
             fill_color=WHITE,
             fill_opacity=1,
             stroke_width=0
         ).shift(LEFT * 0.19 + UP * 1.03)
         
-        # Right eye
-        right_eye_white = Circle(
+        # Right Eye
+        self.right_eye_white = Circle(
             radius=0.18,
             fill_color=WHITE,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(RIGHT * 0.22 + UP * 1.0)
         
-        right_eye_pupil = Circle(
+        self.right_eye_pupil = Circle(
             radius=0.09,
-            fill_color=EYE_BLACK,
+            fill_color=self.EYE_BLACK,
             fill_opacity=1,
             stroke_width=0
         ).shift(RIGHT * 0.22 + UP * 1.0)
         
-        right_eye_shine = Circle(
+        self.right_eye_shine = Circle(
             radius=0.04,
             fill_color=WHITE,
             fill_opacity=1,
             stroke_width=0
         ).shift(RIGHT * 0.25 + UP * 1.03)
         
-        # Feet - small triangular shapes
-        left_foot = Polygon(
+        # Feet - Webbed feet using Polygons
+        self.left_foot = Polygon(
             UP * 0.05,
             LEFT * 0.2 + DOWN * 0.1,
             LEFT * 0.05 + DOWN * 0.1,
             RIGHT * 0.05 + DOWN * 0.1,
-            fill_color=FEET_ORANGE,
+            fill_color=self.FEET_ORANGE,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(LEFT * 0.3 + DOWN * 0.9)
         
-        right_foot = Polygon(
+        self.right_foot = Polygon(
             UP * 0.05,
             RIGHT * 0.2 + DOWN * 0.1,
             RIGHT * 0.05 + DOWN * 0.1,
             LEFT * 0.05 + DOWN * 0.1,
-            fill_color=FEET_ORANGE,
+            fill_color=self.FEET_ORANGE,
             fill_opacity=1,
-            stroke_color=OUTLINE,
+            stroke_color=self.OUTLINE,
             stroke_width=2
         ).shift(RIGHT * 0.3 + DOWN * 0.9)
         
-        # Blush marks - pink circles
-        left_blush = Ellipse(
+        # Blush marks - semi-transparent pink ellipses
+        self.left_blush = Ellipse(
             width=0.25,
             height=0.15,
             fill_color="#FFB6C1",
@@ -481,7 +388,7 @@ class EggToChickenTransform(Scene):
             stroke_width=0
         ).shift(LEFT * 0.45 + UP * 0.85)
         
-        right_blush = Ellipse(
+        self.right_blush = Ellipse(
             width=0.25,
             height=0.15,
             fill_color="#FFB6C1",
@@ -489,28 +396,55 @@ class EggToChickenTransform(Scene):
             stroke_width=0
         ).shift(RIGHT * 0.45 + UP * 0.85)
         
-        # Group all parts - order matters for layering
-        chicken_group = VGroup(
-            left_foot,
-            right_foot,
-            left_wing,
-            right_wing,
-            body,
-            head,
-            tuft1,
-            tuft2,
-            tuft3,
-            left_eye_white,
-            left_eye_pupil,
-            left_eye_shine,
-            right_eye_white,
-            right_eye_pupil,
-            right_eye_shine,
-            beak,
-            left_blush,
-            right_blush
+        # Group - Order determines what is drawn on top
+        self.add(
+            self.left_foot,
+            self.right_foot,
+            self.left_wing,
+            self.right_wing,
+            self.body,
+            self.head,
+            self.tuft1,
+            self.tuft2,
+            self.tuft3,
+            self.left_eye_white,
+            self.left_eye_pupil,
+            self.left_eye_shine,
+            self.right_eye_white,
+            self.right_eye_pupil,
+            self.right_eye_shine,
+            self.beak,
+            self.left_blush,
+            self.right_blush
         )
-        
-        return chicken_group
 
+    def get_subcomponent(self, part_name: str):
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in Chicken")
 
+    def set_color(self, part_name: str, color: str):
+        """Sets color with special handling for blush opacity."""
+        component = self.get_subcomponent(part_name)
+        if component:
+             c = ManimColor(color)
+             if isinstance(component, VMobject):
+                component.set_color(c)
+                if component.get_fill_opacity() > 0:
+                     opacity = 0.6 if "blush" in part_name else 1
+                     component.set_fill(c, opacity=opacity)
+
+    def animate_manipulation(self, part_name: str, animation_type: str = "Indicate", **kwargs):
+        """Animation helper."""
+        component = self.get_subcomponent(part_name)
+        if not component:
+             return Wait(0.1)
+             
+        if animation_type == "Indicate":
+            return Indicate(component, **kwargs)
+        elif animation_type == "Wiggle":
+            return Wiggle(component, **kwargs)
+        elif animation_type == "Flash":
+            return Flash(component, **kwargs)
+        else:
+            return Wait(0.1)

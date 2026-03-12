@@ -1,0 +1,90 @@
+--------------------------------------------------------------------------------------------------
+Impact Dashboard Asset Collection: A detailed breakdown of the `MetricCard`, `GeographyCard`, `DonutCard`, and `BarCard` components, describing their visual construction and modular code implementation.
+--------------------------------------------------------------------------------------------------
+
+Step 1: The Base Card (`Card`)
+All dashboard metrics share a foundational structure provided by the base `Card` class. This class inherits from `manim.VGroup` and establishes the physical boundaries and depth of the widgets.
+
+- **Background (`bg`)**: The primary shape is a `RoundedRectangle` filled with solid `WHITE` (`fill_opacity=1`) and no stroke (`stroke_width=0`). The rounded corners (`corner_radius=0.2`) soften the UI, making it feel friendly and modern.
+- **Drop Shadow (`shadow`)**: To create depth, a secondary `RoundedRectangle` of the exact same dimensions is created behind the background. It is filled with `BLACK` at a very low opacity (`fill_opacity=0.1`). Crucially, this shadow is physically shifted slightly down and to the right (`RIGHT * 0.05 + DOWN * 0.05`) relative to the main background. This simple geometric offset simulates a light source hitting the card from the top-left, elevating it off the canvas.
+
+Step 2: MetricCard Construction
+The `MetricCard` visualizes a single, prominent data point, often accompanied by currency symbols or units. It is constructed from four main visual elements combined into a cohesive stack:
+
+- **The Main Number**: A dynamic `DecimalNumber` serves as the core element, rendered at a large font size (`64` by default) in a custom thematic color. It is configured to automatically group thousands with commas.
+- **Prefix / Suffix**: If a prefix (like "₹") or a suffix (like "Cr" or "+") is provided, they are generated as `Text` or `Tex` objects. They inherit the thematic color but are scaled down (prefix to 60%, suffix to 75% of the main font size) to establish a clear visual hierarchy.
+- **Alignment Group (`metric_group`)**: The prefix, number, and suffix are packaged into a horizontal `VGroup` and arranged using `.arrange(RIGHT, buff=0.1, aligned_edge=DOWN)`. Aligning by the `DOWN` edge ensures that the baselines of the different font sizes match perfectly. A special edge-case is handled for the "+" suffix, which is manually shifted up by `0.15` units because aligning a plus sign by its bottom bounding box looks visually incorrect next to numbers. This centered group is then shifted slightly upward (`UP * 0.2`) relative to the card's center to leave room for the label.
+- **Bottom Label (`label_text`)**: A small `GRAY` `Tex` string (`font_size=18`) sits below the metric group (`DOWN * 0.65` from the center), providing the context for the number (e.g., "Total Funding Enabled").
+
+Step 3: GeographyCard Construction
+The `GeographyCard` is designed for side-by-side comparison of two related metrics (Districts and States). It expands its width to accommodate a dual-column layout.
+
+- **Bounding Boxes (`dist_bg`, `state_bg`)**: Instead of floating the numbers directly on the white card, two small, light gray (`#F8F9FA`) `RoundedRectangle` pill-boxes are created. They have a subtle darker gray stroke to define their edges. The left box (`dist_bg`) is shifted left (`LEFT * 0.9`), and the right box (`state_bg`) is shifted right by the same amount, creating perfect symmetry.
+- **Metric Pairs**: Inside each bounding box, a purple `DecimalNumber` (`#9B59B6`, `font_size=36`) is placed slightly to the left (`LEFT * 0.2`), and a small gray `Tex` label is placed near the bottom (`DOWN * 0.3`). This creates two distinct "zones" of information within the single larger card.
+- **Unified Caption (`bottom`)**: An italicized, bold gray `Tex` string (e.g., "Pan India Reach") is centered at the very bottom of the main white card (`DOWN * 0.65`). This ties the two separate bounding boxes together under a single thematic umbrella.
+
+Step 4: DonutCard Construction
+The `DonutCard` visualizes a percentage using a radial pie layout, relying on Manim's polar geometry primitives.
+
+- **The Track (`base`)**: A full circle is drawn using an `Annulus` with an inner radius of `0.55` and outer radius of `0.95`. It is filled with `GRAY` at `0.2` opacity, providing a visual guide for the "empty" portion of the chart. It is shifted slightly upward (`UP * 0.25`) to make room for the label below.
+- **The Active Ring (`sector`)**: The filled percentage area uses an `AnnularSector` with identically matched inner and outer radii. It begins at the top-center (`start_angle=PI/2`) and naturally sweeps counter-clockwise. To prevent rendering crashes off 0-value angles, it is initialized with a microscopic angle of `0.001`. It is colored a striking pink (`#E91E63`).
+- **Percentage Text (`grp`)**: A `DecimalNumber` and a `\%` `Tex` symbol are arranged side-by-side using `.arrange(RIGHT, aligned_edge=UP)`. They use the same pink color as the sector. This group is positioned precisely at the geographic center (`arc_center`) of the annulus geometry.
+- **Bottom Label**: As with other cards, a small gray `Tex` label string rests near the bottom edge of the white card.
+
+Step 5: BarCard Construction
+The `BarCard` is used for ratio-based progress, utilizing horizontal linear scaling.
+
+- **Background Track (`bg_bar`)**: A semi-transparent `GRAY` `RoundedRectangle` representing 100% capacity is drawn across 70% of the card's width. Its height is kept very slim (`0.3`), making it physically resemble a progress bar. It sits underneath the center point (`DOWN * 0.15`).
+- **Active Bar (`bar`)**: A teal (`#17A2B8`) solid `RoundedRectangle` overlaps the background track. Its left edge is perfectly aligned with the left edge of the `bg_bar` using `aligned_edge=LEFT`. Its width dynamically scales based on the ratio fraction, starting from a minimum of `0.01` to ensure the rounded corners render properly when "empty".
+- **Ratio Text (`grp`)**: A `DecimalNumber` acts as the numerator (`font_size=54`), while a static `Tex` string (e.g., "/10") acts as the denominator (`font_size=48`). They are colored teal to match the active bar and arranged horizontally (`buff=0.1`). This text group floats prominently above the bars (`UP * 0.35`).
+- **Bottom Label**: Finally, the standard small gray `Tex` description sits below the track to label what the ratio represents.
+
+Step 6: Code Implementation — Logic and Animation
+
+The visual design is encapsulated in Python classes (`MetricCard`, `GeographyCard`, `DonutCard`, `BarCard`) inheriting from `manim.VGroup`, which provides structure and interactivity. This implementation ensures the dashboard cards are not just static shapes but manipulatable objects for animation.
+
+1.  **Component Access**: The `get_subcomponent` method allows direct access to the logical components of any card for targeted manipulation.
+    -   `MetricCard`: `number`, `prefix`, `suffix`, `label`, `metric_group`, `bg`, `shadow`
+    -   `GeographyCard`: `dist_bg`, `dist_num`, `dist_lbl`, `state_bg`, `state_num`, `state_lbl`, `bottom`, `bg`, `shadow`
+    -   `DonutCard`: `base`, `sector`, `number`, `symbol`, `group`, `label`, `bg`, `shadow`
+    -   `BarCard`: `bg_bar`, `bar`, `number`, `denominator_text`, `group`, `label`, `bg`, `shadow`
+
+    ```python
+    def get_subcomponent(self, component_name: str):
+        components = {
+            "number": self.number,
+            "prefix": self.prefix_elem,
+            "shadow": self.shadow,
+            # ...
+        }
+        return components.get(component_name, None)
+    ```
+
+2.  **Dynamic Setters & Alignment**: The classes expose `set_xxx` methods that update specific values while maintaining the complex structural logic detailed in Steps 2-5 (like horizontal clustering, bounds-checking scaling for bars, and zero-value protection for annular sectors).
+
+    ```python
+    # Example DonutCard setter handling angle recalculation
+    def set_percent(self, percent):
+        self.num.set_value(percent)
+        self._realign_grp()
+        angle = max(0.001, (percent / 100) * TAU)
+        new_sector = AnnularSector(
+            arc_center=self.center_pos,
+            start_angle=PI/2, angle=angle,
+            # ...
+        )
+        self.sector.become(new_sector)
+    ```
+
+3.  **Animation Integration**: To easily insert these widgets into a timeline without relying on internal clock updates, each card provides robust animation wrapping helpers. For example, `animate_entry()` defaults to a typical fade-in, while specialized methods manage interpolations between logic states.
+
+    ```python
+    def animate_ratio_change(self, target_numerator, target_denominator=10, run_time=1.0):
+        start_num = self.num.get_value()
+        def update_func(m, alpha):
+            val_num = interpolate(start_num, target_numerator, alpha)
+            self.set_ratio(val_num, target_denominator)
+        return UpdateFromAlphaFunc(self, update_func, run_time=run_time)
+    ```
+
+This code structure effectively bridges the gap between the static visual design layout defined in Steps 1-5 and the dynamic runtime requirements of a Manim animation environment.

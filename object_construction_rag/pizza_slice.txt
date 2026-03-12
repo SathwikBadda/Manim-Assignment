@@ -1,0 +1,71 @@
+--------------------------------------------------------------------------------------------------
+Pizza Slice Assembly as a Radial Food Icon Primitive: This storyboard describes a structured visual assembly process for constructing a single pizza slice as a modular radial segment, designed to tessellate seamlessly into a complete circular pizza
+--------------------------------------------------------------------------------------------------
+
+Step 1: Boundary — The Cheese Slice Defines the Radial Territory
+
+The construction begins by establishing the cheese layer, which acts as the foundational boundary of the slice. A wedge-shaped region is formed using a closed polygon that originates at the center of the pizza and expands outward along two angular edges defined by the slice’s start and end angles. Rather than using a prebuilt sector, the curved outer edge is approximated through a sequence of evenly spaced points sampled along the arc of a circle. All outer points lie at a consistent radial distance from the center, ensuring that the slice conforms precisely to the circumference of the pizza.
+
+Visually, this cheese shape is rendered as a solid, warm yellow surface with a dark outline. The stroke thickness is substantial enough to clearly define the slice boundary when viewed alongside neighboring slices, while the fill remains flat and uniform to serve as a neutral canvas for toppings. By anchoring one vertex at the center and expanding outward symmetrically across the angular span, this step establishes both the structural footprint and the rotational alignment of the slice.
+
+Step 2: Structure — The Crust Is Layered Along the Outer Arc
+
+Once the cheese boundary is established, attention shifts to the crust, which is constructed as a layered detail along the outermost edge of the slice. Two concentric arc segments are drawn, each following the exact same angular span as the cheese but differing slightly in radius and stroke thickness. The outer arc sits directly on the cheese’s curved edge and is rendered thicker and darker, representing the baked exterior of the crust. Just inside it, a second arc follows the same curvature at a slightly reduced radius, using a lighter tone to suggest softness and depth.
+
+These arcs are purely stroke-based, with no fill, allowing them to sit cleanly atop the cheese without altering its geometry. Their concentric relationship creates the illusion of a thick crust without introducing additional polygons or boolean operations. Because both arcs are defined relative to the same radius and angular bounds as the cheese, they naturally remain aligned even as the slice is rotated or duplicated to form a full pizza.
+
+Step 3: Texture — Subtle Highlights Animate the Crust Surface
+
+To avoid a flat, mechanical appearance, subtle highlight details are added to the crust. Short radial line segments appear at a few evenly distributed positions along the arc, each aligned perpendicular to the crust’s curvature. These highlights are positioned by interpolating along the slice’s angular span rather than by absolute angles, ensuring that they scale and rotate consistently with the slice.
+
+Each highlight extends only a small distance inward from the outer crust edge and is rendered with a thin, semi-transparent white stroke. The effect is intentionally restrained: the highlights do not dominate the form but instead suggest sheen and baked texture. Because these elements are grouped together and positioned relative to the crust radius, they read as surface detail rather than independent shapes.
+
+Step 4: Character — Toppings Are Placed Within the Cheese Interior
+
+With the slice’s structural layers complete, toppings are introduced to give it character and visual richness. All toppings are positioned strictly within the interior of the cheese region, using polar coordinates defined relative to the slice’s midpoint angle and a reduced radial distance from the center. This ensures that no topping crosses the slice boundary or interferes with adjacent slices when assembled.
+
+Pepperoni pieces appear first as bold red circles, placed at staggered radial depths to avoid symmetry. Each pepperoni is accented with smaller, lighter highlights offset slightly from its center, implying surface oil and curvature. Mushrooms are introduced as semi-circular arcs, rotated to align with the slice’s orientation and positioned closer to the mid-radius, while olives appear as small green ellipses, vertically elongated and tucked into open spaces between other toppings.
+
+All toppings share a consistent dark outline, visually tying them back to the cheese stroke and maintaining cohesion across the slice. Their placement feels organic but remains governed by proportional rules, ensuring repeatability and stylistic consistency across multiple slices.
+
+Step 5: Complete Pizza Construction
+
+The completed pizza slice reads as a self-contained yet modular unit: structurally defined by angular bounds, visually enriched through layered detailing, and spatially constrained to allow perfect radial assembly. When duplicated and rotated around a shared center, these slices interlock cleanly to form a complete pizza without gaps, overlaps, or visual inconsistencies.
+
+Step 6: Code Implementation — Logic and Animation
+
+The visual design is encapsulated in a Python class `PizzaSlice` (inheriting from `manim.VGroup`), which provides structure and interactivity. A simpler `CompletePizza` class manages a collection of these slices.
+
+1.  **Component Access**: The `get_subcomponent` method allows direct access to the `cheese_slice`, `crust_outer`, `crust_inner`, `toppings`, `pepperonis`, `mushrooms`, or `olives` by name, facilitating targeted animations.
+
+    ```python
+    def get_subcomponent(self, part_name: str):
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in PizzaSlice")
+    ```
+
+2.  **Dynamic Coloring**: The `set_color` method updates the color of specific parts while preserving their specific properties.
+
+    ```python
+    def set_color(self, part_name: str, color: str):
+        component = self.get_subcomponent(part_name)
+        if component:
+             c = ManimColor(color)
+             if isinstance(component, VMobject):
+                component.set_color(c)
+                if component.get_fill_opacity() > 0:
+                     component.set_fill(c, opacity=1)
+    ```
+
+3.  **Animation Integration**: The `animate_manipulation` helper method simplifies the process of applying standard Manim animations like `Indicate`, `Wiggle`, or `Flash` to specific parts of the icon.
+
+    ```python
+    def animate_manipulation(self, part_name: str, animation_type: str = "Indicate", **kwargs):
+        # ...
+        if animation_type == "Wiggle":
+            return Wiggle(component, **kwargs)
+        # ...
+    ```
+
+This code structure effectively bridges the gap between the static visual design and the dynamic requirements of the animation environment.

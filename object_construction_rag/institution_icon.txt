@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------------------------
+Institutional Icon Assembly as a Symbolic Architectural Build: Describes a structured visual assembly process for constructing a minimal institutional building icon using simple geometric primitives and relative positioning logic
+--------------------------------------------------------------------------------------------------
+
+Step 1: Foundation — Tiered Base Establishes Stability
+
+The animation begins on a dark, neutral background with an empty frame. A wide, shallow rectangular block appears first as the primary foundation of the structure, horizontally centered within the composition and positioned at the lowest visual level of the icon. This base fades in cleanly, establishing a sense of weight and stability. Immediately above it, a second, slightly narrower rectangular block is introduced, aligned horizontally with the first and positioned directly on top using a zero-gap “next-to” relationship. The reduced width of the upper base creates a stepped effect, visually suggesting architectural layering and grounding the structure as something permanent and institutional.
+
+Step 2: Structure — Columns Define Order and Rhythm
+
+With the stepped base in place, a set of identical vertical rectangular columns appears above the upper base. These columns are arranged side by side using equal horizontal spacing, forming a symmetrical row that is centered relative to the foundation below. The entire group of columns is positioned directly above the second base, maintaining vertical alignment and a continuous structural flow. Each column shares the same height and width, reinforcing uniformity and order, while the spacing between them allows the structure to feel open rather than dense. Together, the columns introduce the core visual language of classical institutional architecture.
+
+Step 3: Unification — The Cap Binds the Structure
+
+Once the columns are established, a long horizontal rectangular cap is introduced above them. This cap matches the width of the upper base, visually tying the top and bottom of the structure together. It is horizontally aligned with the columns and positioned directly above them using a tight vertical adjacency, as though resting on the column tops. The cap acts as a unifying beam, visually compressing the vertical complexity below into a single, coherent architectural unit and preparing the silhouette for its symbolic finish.
+
+Step 4: Identity — Roof Completes the Institutional Silhouette
+
+In the final step, a triangular roof form appears above the horizontal cap, completing the institutional icon. The roof is constructed as a polygon whose base extends slightly beyond the cap’s left and right edges, giving it a protective, overhanging presence. Its apex rises upward from the center of the cap, forming a clear triangular peak that immediately signals formality and authority. The roof locks into place relative to the cap beneath it, completing the classical building silhouette. Once assembled, the entire structure is treated as a single grouped unit and subtly scaled down to achieve visual balance within the frame. The icon then holds steady, uniformly white against the dark background, presenting a clean and recognizable symbol of an institution.
+
+Step 5: Code Implementation — Logic and Animation
+
+The visual design is encapsulated in a Python class `InstitutionIcon` (inheriting from `manim.VGroup`), which provides structure and interactivity. This implementation ensures the icon is not just a static shape but a manipulatable object for animation.
+
+1.  **Component Access**: The `get_subcomponent` method allows direct access to the `base1`, `base2`, `cols`, `cap`, or `roof` by name, facilitating targeted animations.
+
+    ```python
+    def get_subcomponent(self, part_name: str):
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in InstitutionIcon")
+    ```
+
+2.  **Dynamic Coloring**: The `set_color` method updates the color of specific parts while preserving their specific properties.
+
+    ```python
+    def set_color(self, part_name: str, color: str):
+        component = self.get_subcomponent(part_name)
+        if component:
+            c = ManimColor(color)
+            if isinstance(component, VMobject):
+                component.set_color(c)
+                if component.get_fill_opacity() > 0:
+                     component.set_fill(c, opacity=1)
+    ```
+
+3.  **Animation Integration**: The `animate_manipulation` helper method simplifies the process of applying standard Manim animations like `Indicate`, `Wiggle`, or `Flash` to specific parts of the icon.
+
+    ```python
+    def animate_manipulation(self, part_name: str, animation_type: str = "Indicate", **kwargs):
+        # ...
+        if animation_type == "Wiggle":
+            return Wiggle(component, **kwargs)
+        # ...
+    ```
+
+This code structure effectively bridges the gap between the static visual design and the dynamic requirements of the animation environment.

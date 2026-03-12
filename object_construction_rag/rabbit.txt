@@ -1,0 +1,57 @@
+--------------------------------------------------------------------------------------------------
+Rabbit Asset Collection: A detailed breakdown of the `Rabbit` and `Carrot` assets, describing their visual construction and code implementation.
+--------------------------------------------------------------------------------------------------
+
+Step 1: The Rabbit — A Character of Curves
+
+The **Rabbit** is a complex character assembly built primarily from ellipses and circles to create a soft, organic look.
+
+-   **Body & Head**: A large vertical ellipse forms the body, while a circle sits on top for the head.
+-   **Ears**: Two long, thin ellipses form the ears. Each ear has an inner pink ellipse (`#FFB6C1`) layered on top of the outer beige ellipse (`#F0E6D2`). They are rotated slightly outwards to give a perked-up appearance.
+-   **Face**: The face is detailed with dark eyes, a small pink triangular nose, and whiskers (simple lines). The mouth is formed by two small arcs curving outwards from the center line.
+-   **Limbs**: Small ellipses at the base serve as feet, and a fluffy white circle at the back acts as the tail.
+
+The entire assembly is outlined in brown (`#8B7355`) to define the shapes clearly against any background.
+
+Step 2: The Carrot — Texture and Detail
+
+The **Carrot** is designed to complement the rabbit.
+
+-   **Body**: The main body is an orange polygon, tapered to a point at the bottom and wider at the top. Rounded corners soften the geometric feel.
+-   **Texture**: Thin, semi-transparent lines traverse the body horizontally, simulating the natural ridges found on a carrot.
+-   **Leaves**: The top consists of multiple green ellipses arranged in a fan shape, representing the leafy greens. Darker green strokes add depth.
+-   **Highlights**: Two white ellipses with low opacity are placed on the body to create a specular highlight, giving the carrot a fresh, crunchy appearance.
+
+Step 3: Code Implementation — Logic and Animation
+
+The visual designs are encapsulated in Python classes: `Rabbit` and `Carrot`, both inheriting from `manim.VGroup`.
+
+1.  **Component Access**: Both classes use `get_subcomponent` to provide access to their many parts.
+    -   `Rabbit`: `head`, `body`, `left_ear_outer`, `left_ear_inner`, `tail`, `nose`, `whiskers`, etc.
+    -   `Carrot`: `carrot_body`, `texture_lines`, `leaves`, `highlight1`, `highlight2`.
+
+    ```python
+    def get_subcomponent(self, part_name: str):
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in [ClassName]")
+    ```
+
+2.  **Dynamic Coloring**: The `set_color` method enables modifying colors dynamically. It includes logic to handle special cases like the semi-transparent highlights on the carrot or the inner ear color on the rabbit, ensuring that applying a global color doesn't flatten the asset's detailed shading.
+
+    ```python
+    def set_color(self, part_name: str, color: str):
+        # ... logic to find component and set color ...
+        # Special handling for opacity preservation
+        if "highlight" in part_name:
+             component.set_fill(c, opacity=0.4)
+    ```
+
+3.  **Animation Integration**: The `animate_manipulation` helper method allows for expressive animations. For example, you can `Wiggle` the rabbit's nose or `Indicate` the carrot to draw attention to it.
+
+    ```python
+    def animate_manipulation(self, part_name: str, animation_type: str = "Indicate", **kwargs):
+        # returns specific animation instance like Wiggle or Flash
+    ```
+
+This robust implementation separates the visual definition from the animation logic, making it easy to script complex interactions between the rabbit and the carrot.

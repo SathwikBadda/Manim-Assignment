@@ -1,0 +1,75 @@
+Rocket with Flame Assembly as a Launch Vehicle Icon Primitive: Describes a structured visual assembly process for constructing a stylized rocket icon paired with a layered exhaust flame. The rocket is designed as a vertically oriented, forward-moving artifact, combining a strong central fuselage with directional accents such as fins, a nose cone, and a downward-facing engine. The flame is treated as a separate but complementary artifact, built through concentric, vertically stretched forms that imply heat and motion without explicit animation. The overall construction emphasizes vertical alignment, mirrored symmetry, proportional scaling, and layered contrast, making it suitable for procedural illustration systems such as Manim and for retrieval-augmented generation workflows that rely on symbolic clarity, spatial intent, and component hierarchy.
+
+Step 1: Axis — The Rocket Body Establishes Vertical Dominance
+
+The construction begins by defining the rocket’s main body as a tall, rounded rectangular form. This fuselage acts as the visual and structural axis of the entire artifact, extending vertically with a height significantly greater than its width to immediately suggest lift, motion, and aerodynamic purpose. Rounded corners soften the silhouette, preventing the body from reading as a rigid block while still maintaining a strong geometric presence.
+
+The body is filled with a clean, light surface color and outlined with a darker stroke to ensure legibility against varied backgrounds. All subsequent elements—nose, fins, windows, and engine—are positioned relative to this body rather than the frame, making it the central reference for alignment and proportion throughout the assembly.
+
+Step 2: Direction — The Nose Cone Sharpens Forward Intent
+
+Once the fuselage is in place, a nose cone is added to define the rocket’s forward direction. This element appears as a triangular, bullet-like shape positioned directly above the top edge of the body, with its base aligned to the body’s upper width and its tip extending upward along the central vertical axis. The cone’s proportions are intentionally compact so that it feels like a cap rather than an extension of the body.
+
+Rendered in a warm, contrasting color and outlined consistently with the body, the nose cone introduces visual tension and directional clarity. Its placement reinforces upward motion while preserving symmetry, ensuring the rocket reads instantly as a vehicle designed to travel forward and upward.
+
+Step 3: Stability — Fins Anchor the Rocket Laterally
+
+With the core vertical structure defined, lateral stability is introduced through a pair of mirrored fins attached to the lower half of the fuselage. Each fin is constructed as a sharp-edged quadrilateral that flares outward from the body before tapering to a pointed lower edge. The fins originate slightly above the body’s midpoint and extend downward beyond the lower curvature, visually bracing the rocket against sideways motion.
+
+The left and right fins are symmetrical reflections of one another, positioned relative to the body’s side edges rather than the scene. Their bold color matches the nose cone, visually linking directional and stabilizing components. By placing the fins behind the body in the visual stack, they appear structurally attached rather than decorative.
+
+Step 4: Identity — The Porthole Adds Scale and Personality
+
+To humanize the rocket and establish scale, a circular porthole is added to the upper portion of the fuselage. This window is centered horizontally and placed slightly above the body’s midpoint, avoiding both the nose cone and the fin region. Its circular shape contrasts with the elongated body, drawing attention inward.
+
+The porthole is filled with a bright, warm tone and outlined to match the rocket’s stroke language. A small, offset highlight sits within the window, positioned toward the upper side to suggest reflective glass. This subtle detail adds depth and personality without disrupting the rocket’s clean silhouette.
+
+Step 5: Function — The Engine Nozzle Grounds the Form
+
+At the base of the rocket, a compact engine nozzle is introduced as a trapezoidal form. This element sits directly beneath the fuselage, aligned to its centerline, and flares slightly outward at the top before narrowing toward the bottom. Its darker coloration distinguishes it from the body, clearly signaling function rather than structure.
+
+The nozzle completes the rocket’s physical logic, visually explaining how thrust is generated. Its placement creates a natural attachment point for the flame while also grounding the rocket’s vertical stack.
+
+Step 6: Energy — The Flame Suggests Thrust and Motion
+
+The flame is constructed as a separate layered artifact that aligns beneath the engine nozzle along the same vertical axis. It is built from three vertically stretched, overlapping circular forms, each centered relative to the nozzle but slightly offset upward to suggest rising heat. The outermost layer is the largest and softest, using a translucent orange tone to define the flame’s boundary.
+
+Inside it, a brighter yellow-orange layer adds intensity, while the smallest inner core—positioned highest—represents the hottest region of the exhaust. None of the flame layers use outlines, allowing them to feel fluid and energetic in contrast to the rocket’s hard-edged geometry. Together, these layers create a convincing flame silhouette using simple primitives and proportional offsets alone.
+
+Step 7: Code Implementation — Logic and Animation
+
+The visual design is encapsulated in Python classes `Rocket` and `Flame` (inheriting from `manim.VGroup`), which provide structure and interactivity.
+
+1.  **Component Access**: The `get_subcomponent` method allows direct access to parts like `body`, `nose`, `left_fin`, `right_fin`, `porthole`, `glare`, `nozzle` (for Rocket) or `flame_outer`, `flame_middle`, `flame_inner` (for Flame).
+
+    ```python
+    def get_subcomponent(self, part_name: str):
+        if hasattr(self, part_name):
+            return getattr(self, part_name)
+        raise ValueError(f"Part name {part_name} not found in Rocket")
+    ```
+
+2.  **Dynamic Coloring**: The `set_color` method updates the color of specific parts while preserving their specific properties.
+
+    ```python
+    def set_color(self, part_name: str, color: str):
+        component = self.get_subcomponent(part_name)
+        if component:
+            c = ManimColor(color)
+            if isinstance(component, VMobject):
+                component.set_color(c)
+                if component.get_fill_opacity() > 0:
+                     component.set_fill(c, opacity=1 if part_name != 'glare' else 0.9)
+    ```
+
+3.  **Animation Integration**: The `animate_manipulation` helper method simplifies the process of applying standard Manim animations like `Indicate`, `Wiggle`, or `Flash` to specific parts of the icon.
+
+    ```python
+    def animate_manipulation(self, part_name: str, animation_type: str = "Indicate", **kwargs):
+        # ...
+        if animation_type == "Wiggle":
+            return Wiggle(component, **kwargs)
+        # ...
+    ```
+
+This code structure effectively bridges the gap between the static visual design and the dynamic requirements of the animation environment.

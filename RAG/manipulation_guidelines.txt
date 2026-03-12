@@ -1,0 +1,7 @@
+
+
+To the existing RAG scripts, make the following changes:
+1. For customizing in the individual subcomponents, in the visual add getter methods for each subcomponent
+2. Include any setter methods to change any important logical construction parameters of the visual
+3. Include any animation helper methods which can even take the animation name as parameters so that the different animations on the sub-components can be designed
+4. The object of the class should be callable from a separate Manim Scene and the different subcomponents should be mutable via the methods

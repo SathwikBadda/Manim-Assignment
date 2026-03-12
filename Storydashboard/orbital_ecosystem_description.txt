@@ -1,0 +1,27 @@
+The camera background color is explicitly set to a soft purplish-white (#F0EEF8), creating a neutral stage. 
+
+Three soft, nested background rings are constructed simultaneously. These rings are drawn as solid circles with no stroke width. The outermost ring has a radius of 4.8 and a fill opacity of 10%. The middle ring has a radius of 3.5 and an opacity of 12%. The innermost ring has a radius of 2.4 and an opacity of 9%. Each ring is colored in a light purple hue (#C8B8F0). All three rings are added together as a single visual group to the scene canvas.
+
+A central logo background is created as a white rounded square (#FFFFFF) with a corner radius of 0.28, a width of 1.85, and a height of 1.85, rendered fully opaque with no stroke.
+
+The internal logo cross, resembling the Slack icon, is built systematically from four distinct color segments: a top-left segment in vibrant pink (#E01E5A) positioned at (-0.28, 0.28, 0), a top-right segment in bright yellow (#ECB22E) positioned at (0.28, 0.28, 0), a bottom-left segment in green (#2EB67D) positioned at (-0.28, -0.28, 0), and a bottom-right segment in light blue (#36C5F0) positioned at (0.28, -0.28, 0). For each of these four anchor positions, two crossing geometric pieces are created. First, a vertical rounded rectangle is drawn with a corner radius of 0.10, a width of 0.22, and a height of 0.55. Immediately after, a horizontal rounded rectangle is drawn intersecting it at the exact same anchor point, using the same corner radius, but measuring 0.55 in width and 0.22 in height. Both intersecting layers inherit the specified color of their anchor position and are fully opaque with no stroke. 
+
+The white background square and all the intersecting colored pieces are bundled into a unified central logo group and firmly anchored precisely at the origin point (0, 0, 0). This entire central structure is then set to zero opacity, making it invisible initially.
+
+Eight distinct images are sequentially loaded from the project directory: Google Sheets, Gmail, Google Drive, Google Docs, Google Slides, Google Calendar, Google Meet, and YouTube. A helper function processes each image, loading it as an image object and strictly standardizing its visual height to 0.8 units. 
+
+An invisible orbital track is defined mathematically with a radius of 3.0 units. The eight icons are distributed perfectly evenly along this circular track, spaced exactly 45 degrees apart (PI / 4 radians) starting from the top-center position (90 degrees or PI / 2). Each icon's calculated starting coordinate is mapped directly onto this circumference using trigonometric positioning. As each icon is placed into position, its opacity is dialed down completely to zero, keeping the entire perimeter invisible.
+
+The actual animation begins with the central logo. It elegantly fades into view, completing a transition from zero opacity to full visibility over a brief duration, driven exclusively by the smooth rate function.
+
+Immediately after the center logo appears, the eight perimeter icons ignite. Using a staggered entrance animation with a lag ratio of 10%, each satellite icon fades from zero to full opacity sequentially around the ring. This entire cascade executes seamlessly following the smooth rate function. A brief pause buffers the scene before motion begins.
+
+Once fully visible, continuous orbital rotation takes over. A continuous real-time updater function is securely attached to every individual icon. Based directly on the elapsed timestamp of the renderer, these updaters continuously recalculate the angle of each icon at a steady speed of 0.32 radians per second. The icons physically sweep clockwise around the track, endlessly translating to their dynamically calculated new coordinates on the perimeter of the 3.0 radius orbit. The scene holds this steady tracking motion for exactly 5.5 seconds of runtime, allowing the full ecosystem drift to be recorded.
+
+Following the orbital cycle, the continuous tracking updaters are cleanly stripped from all icons, unlocking their coordinates.
+
+A sweeping collapse phase triggers. Every orbiting icon simultaneously converges inward toward the exact center of the screen (the origin). As they translate inward, each icon rapidly shrinks down toward a terminal scale factor of 0.05 and violently fades its opacity to zero. This collapsing cascade launches using a staggered start constraint with an extremely tight 6% lag ratio between icons. The entire converging sequence utilizes the smooth rate function to resolve.
+
+Once the satellites have vanished into the core, the central logo concludes the sequence with a heartbeat pulse. The logo scales up to 1.12 times its original dimensions following the smooth rate function. Immediately after reaching the apex, it reverses the motion, shrinking perfectly down from that exact 1.12 scale back to its normal resting size (a scale factor of 1 / 1.12), also adhering to the smooth rate function. 
+
+The scene concludes peacefully with a final static hold on the pulsing logo before cutting.

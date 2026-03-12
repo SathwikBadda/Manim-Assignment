@@ -1,0 +1,63 @@
+The camera background color is explicitly set to a light grey-white (#F8F9FB), establishing a clean canvas.
+
+A continuous background particle layer is constructed. Thirty individual floating circles are generated simultaneously. For each circle, the radius is randomly selected between 0.05 and 0.2 units.
+
+The fill color is randomly chosen to be either light grey (#E0E5EC) or pale blue (#D0E0FF), and the opacity randomly falls between 30% and 70%. Each of these thirty circles is randomly dispersed geographically across a coordinate plane stretching from -8 to 8 on the X-axis and -5 to 5 on the Y-axis. Every circle is strictly assigned a random, constant drift velocity between -0.3 and 0.3 units on both the X and Y axes.
+
+A realtime continuous updater function is attached to the entire particle group to enforce this drift velocity per frame. If any drifting particle crosses the boundary edges of the screen (X > 8, X < -8, Y > 5, Y < -5), the updater seamlessly teleports the circle to the opposite coordinate edge to create an infinite, wrap-around drifting effect. This particle system is formally added to the scene.
+
+A primary bold text element reading "SCORM" is created using a massive font size of 150, a heavy weight, and colored in deep navy blue (#1a1a2e). This text object is physically shifted downwards by 1.5 units.
+
+A vibrant blue rectangular stripe (#1565E0) is built horizontally.
+
+The width of this stripe is explicitly scaled to be 1.05 times wider than the "SCORM" text object itself, measuring 0.45 in height with full opacity and no stroke.
+
+The horizontal stripe is centered directly underneath the text and shifted slightly lower by an additional 0.35 units downwards. To ensure visual clarity, the blue stripe is forced perfectly behind the text via its Z-index.
+
+The blue stripe is set to a Z-index of 1, and the "SCORM" text is overlaid atop it at a Z-index of 2. Both objects are bundled together into a unified main logo group.
+
+The entire grouped object is then drastically scaled down to an invisible 0.001 fractional magnitude and structurally added to the canvas.
+
+A dialogue ellipsis bubble is built using a white rounded rectangle with a strong dark navy stroke (#1a1a2e) paired with a triangular white tail polygon pointing diagonally down to the right. To cleanly mask where the tail overlaps the main bubble edge, a simple white stroke line is layered over the seam. Three tiny dark navy dots (#1a1a2e) are aligned horizontally inside the center of the bubble, with the middle dot deliberately overridden to a stark red (#FF4D4D). These geometries are clustered into an ellipsis bubble group.
+
+The bubble is manually translated into position precisely above and to the far left edge of the "SCORM" text (shifted up by 1.4 units and left by 2.8 units from the text's top edge anchor). It is scaled down to 0.001 to render it invisible and natively added to the scene.
+
+A first main dialogue bubble is drawn using a solid blue (#1565E0) rounded rectangle geometry stretching 4.5 units in width and 1.3 units in height, sporting a corner radius of 0.65.
+
+A solid blue triangular tail is positioned pointing distinctly down and immediately to the left. White markup text reading "Can you create\n<b>SCORM</b> courses?" sized at 21 is perfectly centered inside the blue graphic.
+
+All geometries are collated into a first question bubble. This element is situated above and slightly right of the main text layout (moved up by 1.5 units and right by 1.2 units from the main logo's top margin).
+
+The resting geographic center of this bubble is locked as a tracker reference. It is shrunk down to an invisible 0.001 scale and anchored to the scene.
+
+A secondary mirror-style dialogue bubble is assembled mapping identically to the first (utilizing the same solid blue aesthetics) but reading "How can I create\n<b>SCORM</b> courses?!". It is geometrically pinned exactly to the cached tracker reference center of the previous bubble. This secondary bubble is pre-rotated negatively backward by 35 degrees and scaled aggressively down to 0.001 before being added cleanly onto the invisible staging field.
+
+The animation sequencing begins with a brief buffer hold.
+
+The primary "SCORM" grouped logo violently pops into perspective. Its fractional scale aggressively leaps structurally upward to a multiplier of 1000 leveraging an elastic outbound release (ease_out_elastic rate function) commanding a duration.
+
+A hold registers for.
+
+The ellipsis bubble springs dynamically upward expanding its dimensions by scaling towards 1000 mapped tightly against the identical ease_out_elastic rate function across.
+
+An execution pause lingers for.
+
+The ellipsis bubble rapidly collapses, vanishing seamlessly down to a 0.001 fraction across an incredibly fast span and is surgically removed native to the environment.
+
+An environmental pause tracks for.
+
+The initial blue dialogue bubble erupts geometrically springing onward to a scaling factor of 1000 structured utilizing identical elastic deployment (ease_out_elastic) driving forward across.
+
+A static wait sequence holds for to register visually.
+
+A high-velocity spatial replacement trick enacts.
+
+The primary blue dialogue bubble rapidly collapses aggressively shrinking entirely down natively to 0.001 scaling factor whilst spinning continuously outward visually 35 angular degrees tracked forcefully by an ease_in_cubic tightening curve operating in a rapid timeframe.
+
+The shrunken first bubble is purged immediately from memory organically. Immediately intersecting its exit, the secondary dialogue bubble geometrically explodes mirroring the expansion track scaling fiercely up multiplying towards 1000 while rotating simultaneously inward 35 degrees to rest squared upon the plane tracking an ease_out_elastic parameter governed through.
+
+An absolute freeze frame holds natively for evaluating the scene. To conclude visually, the second dialogue bubble expands 3 sizes further vertically and physically spirals downward completely off-axis swinging -60 negative angular degrees dynamically losing total opacity dropping sequentially smoothly using the ease_in_cubic structure over exactly. It is cleanly erased completely. Subsequently driving everything out, the "SCORM" text slides decisively mapping a vector pulling violently left linearly 15 scalar units.
+
+The underlying stripe chases translating slightly slower pulling left by 5 native units. At the same execution phase, the background particle array physically drags pushing left mapping parallel along identical 15 units tracking flawlessly guided securely over enforcing an ease_in_out_cubic structure.
+
+A final wait instruction bridges down executing cleanly concluding visually.

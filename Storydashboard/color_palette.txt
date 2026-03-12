@@ -1,0 +1,50 @@
+## PALETTE A
+
+Background: `#2C3336`
+Primary Text: `#61D262`
+Secondary Text: `#FFFFFF`
+Primary Shape Accent: `#4280A7`
+Secondary Shape Accent: `#EF9515`
+
+## PALETTE B
+
+Background: `#2B2E4A`
+Primary Text: `#FFFFFF`
+Secondary Text: `#E0E7FF`
+Primary Shape Accent: `#FF9F1C`
+Secondary Shape Accent: `#9B5DE5`
+Tertiary Accent: `#00BBF9`
+
+## PALETTE C
+
+Background: `#B9E769`
+Primary Text: `#0F172A`
+Secondary Text: `#DCE1E9`
+Primary Shape Accent: `#6366F1`
+Secondary Shape Accent: `#D9619D`
+
+## PALETTE D
+
+Background: `#FFF3B0`
+Primary Text: `#102A43`
+Secondary Text: `#334E68`
+Primary Shape Accent: `#FF7A59`
+Secondary Shape Accent: `#3AB0FF`
+
+## PALETTE E
+
+Background: `#5B4BDB`
+Primary Text: `#F8FAFC`
+Secondary Text: `#E2E8F0`
+Primary Shape Accent: `#FF6B9A`
+Secondary Shape Accent: `#2DD4BF`
+
+## PALETTE F (Blackboard Mode)
+
+Background: `#1B1B1B`
+Primary Text: `#FFFFFF`
+Secondary Text: `#E2E8F0`
+Primary Shape Accent: `#1B1B1B`
+Secondary Shape Accent: `#FFD84D`  ← (clean chalk yellow)
+
+
