@@ -147,6 +147,7 @@ venv.bak/
 manim/
 
 media/
+videos/
 
 # Spyder project settings
 .spyderproject
