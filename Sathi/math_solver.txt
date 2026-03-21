@@ -1,0 +1,294 @@
+# Primary Application Scenarios for the Split-Screen Solver Template
+
+## Scenario: Translating a Visual Situation into a Computable Form
+
+This template is best applied when a learner must move from a visible situation to a mathematical expression. The left side presents a stable model such as a geometric figure, number line, grid, or diagram, while the right side converts that structure into equations or arithmetic steps. The key instructional move is showing that computation emerges from structure. The animation helps learners understand that formulas and steps are not arbitrary; they are responses to relationships visible in the diagram. This applies broadly to geometry problems, measurement tasks, ratio models, time-distance problems, and unit-based reasoning across grade levels.
+
+## Scenario: Teaching a Multi-Step Method Clearly and Sequentially
+
+The template is highly effective when the learning objective is procedural fluency. The left panel acts as a persistent workspace where the solution accumulates, while the right panel introduces one step at a time. Each reasoning block enters, explains the transformation, and exits before the next begins. This makes it ideal for LCM/GCD methods, long division, factorization, equation solving, fraction operations, decimal manipulation, and algebraic simplification. The learner experiences structure rather than clutter, and complexity feels manageable because each step is isolated and justified.
+
+## Scenario: Solving Problems with Convergence or “Common Point” Logic
+
+This structure is particularly strong when the solution represents a meeting point, common multiple, intersection, or alignment. The visual side shows the system — such as intersecting lines, repeating cycles, overlapping sets, or coordinated motion — while the computational side determines when or where convergence occurs. The final answer is then repositioned centrally and verified, reinforcing that the result is both calculated and logically consistent with the model. This applies to LCM contexts, simultaneous equations, coordinate geometry intersections, periodic events, and synchronization problems.
+
+## Scenario: Demonstrating Why an Answer Is Correct
+
+The template supports lessons where verification is as important as computation. After completing the solution, the screen transitions into a validation phase where the result is substituted back, checked, or confirmed against the original model. This reinforces mathematical discipline. It is applicable to equation solving, proportional reasoning, area and perimeter calculations, algebraic identities, and problem-solving tasks where justification matters. The animation visually separates execution from proof, helping learners internalize both phases.
+
+## Scenario: Building Structured Problem-Solving Habits
+
+More broadly, this template is suited for any K–12 situation where learners must interpret, plan, execute, and confirm. The left side stabilizes the problem context; the right side manages reasoning. The entry establishes the model. The transitions manage attention. The exits prevent overload. The final consolidation reinforces closure. This makes the template reusable across mathematics topics where clarity, structure, and disciplined reasoning are the primary instructional goals.
+
+---
+
+
+# Scene Initialization and Structural Framing
+
+The scene opens on a dark grey background (#1b1b1b), creating high contrast for white and yellow typography. The entire frame is empty initially, establishing visual calm before structural elements appear.
+
+The title is constructed as a multi-line wrapped text block and positioned at the top edge of the screen, centered horizontally and offset slightly downward from the upper boundary (approximately 0.5 units). Its width spans up to 90% of the frame width. The title’s z-index is set above all masking layers, ensuring it remains visible throughout early transitions.
+
+Below the title, the remaining screen space is divided conceptually into a grid. A faint vertical line appears at the horizontal midpoint of the screen, dividing left and right halves. A faint horizontal line appears across the left half only, approximately at the vertical midpoint between the title and bottom of the frame. These grid lines act as structural guides but remain visually subtle (low opacity grey).
+
+The left half is therefore subdivided into:
+
+* Top-left quadrant (Geometry visualization)
+* Bottom-left quadrant (LCM ladder)
+
+The right half is reserved for dynamic step explanations.
+
+---
+
+# Masking Layer Initialization
+
+Before any right-panel content appears, a large rectangular mask matching the background color is positioned over the entire left half of the screen. This mask sits above right-side panels in z-order but below the title and grid lines.
+
+Its purpose is critical: when right-side panels slide leftward during transitions, the mask creates a “clean wipe” effect, hiding content as it crosses the vertical centerline. This ensures panels do not visually overlap into the left instructional space.
+
+This mask remains stationary for the entire solution sequence.
+
+---
+
+# Geometry Visualization Entry (Top-Left Quadrant)
+
+The heading “THE GEOMETRIC SETUP” appears first in the top-left quadrant. It is centered horizontally within the left half and vertically positioned midway between the title and the horizontal grid divider.
+
+Immediately beneath this heading, the equilateral triangle is drawn using a DrawBorderThenFill animation. The triangle is centered within the top-left quadrant. Its top vertex sits slightly above the quadrant’s vertical midpoint, ensuring space for dimension arrows below.
+
+Once the triangle outline stabilizes, the vertex labels A, B, and C fade in one by one:
+
+* Label A appears slightly above the top vertex.
+* Label B appears to the left of the bottom-left vertex.
+* Label C appears to the right of the bottom-right vertex.
+
+Each label enters with a subtle directional shift corresponding to its spatial orientation.
+
+Following this, three dimension arrows grow outward from their midpoints along each triangle side:
+
+* Bottom side arrow grows horizontally outward.
+* Right side arrow grows along a 30-degree orientation.
+* Left side arrow grows along a 150-degree orientation.
+
+These arrows are slightly offset outward from triangle edges to avoid overlap. Each arrow includes a small “D” label centered along its length.
+
+At this stage, the entire top-left quadrant forms a stable geometric reference model.
+
+---
+
+# LCM Ladder Structure Entry (Bottom-Left Quadrant)
+
+In the bottom-left quadrant, a two-line header appears:
+
+* “THE ‘MEETING’ LOGIC”
+* “LCM DIVISION METHOD”
+
+These are vertically stacked and centered within the lower-left quadrant.
+
+Next, a vertical white line is drawn downward to form the spine of the LCM ladder. Its top aligns just below the headers. The ladder’s total height spans nearly the full bottom-left quadrant.
+
+The first numeric row “15, 20” appears to the right of the vertical line, horizontally offset so the numbers are clearly separated from the ladder spine.
+
+At this moment, the left half of the screen is fully structured but static:
+
+Top-left: Triangle with dimension arrows
+Bottom-left: Ladder structure with initial numbers
+Right half: Empty
+
+---
+
+# Right Panel Step Cycle (Sequential Instruction Flow)
+
+The right half of the screen is reserved for animated instructional panels. Each panel is centered vertically within the right half and positioned at x = +w/4 (center of right half).
+
+Each step follows the same lifecycle:
+
+1. Panel enters via Write animation.
+2. Corresponding ladder update occurs on left.
+3. Panel pauses.
+4. Panel exits by sliding left.
+5. Mask hides panel as it crosses the midline.
+
+This repeated choreography reinforces procedural rhythm.
+
+---
+
+# Step 1 – Prime 2 Introduction
+
+Panel 1 appears on the right, vertically centered. The heading is bold and larger than body text. Text lines are left-aligned within the panel.
+
+As the explanation describes dividing by 2:
+
+* The divisor “2” appears on the left side of the first ladder row (in yellow).
+* A horizontal ladder separator line is drawn.
+* The next row result “15, 10” appears beneath.
+
+Each ladder update is sequential and synchronized to the explanation panel.
+
+After a short pause, the panel shifts left rapidly using a rush_into easing function. As it crosses the vertical centerline, the left mask hides it completely. It is then removed from the scene.
+
+The left-side ladder now permanently shows the updated state.
+
+---
+
+# Step 2 – Continuing with Prime 2
+
+Panel 2 appears in the same right-side location.
+
+The explanation corresponds to dividing 10 by 2 again:
+
+* The second “2” appears in yellow on the ladder.
+* A separator line is drawn.
+* “15, 5” appears in the next row.
+
+Again, after a pause, the panel slides left into the mask and disappears.
+
+The left side now shows two prime 2 entries.
+
+---
+
+# Step 3 – Switching to Prime 3
+
+Panel 3 appears in the identical right-side location.
+
+The ladder updates:
+
+* “3” appears as the next divisor.
+* Separator line drawn.
+* “5, 5” appears beneath.
+
+The geometric triangle remains static throughout, reinforcing that geometry defines the meeting condition while arithmetic computes it.
+
+After explanation pause, the panel slides left and is masked out.
+
+---
+
+# Step 4 – Prime 5 and Convergence
+
+Panel 4 appears on the right.
+
+The ladder updates:
+
+* “5” appears as divisor.
+* Separator line drawn.
+* Final row “1, 1” appears.
+
+This visually signals completion of the LCM ladder process.
+
+Panel exits left via the same masked transition.
+
+---
+
+# Step 5 – Final Computation Panel
+
+Panel 5 appears in the right half.
+
+It summarizes collected primes:
+
+2, 2, 3, 5
+
+The multiplication expression appears beneath, followed by:
+
+LCM = 60
+
+The final “60” is larger, bold, and yellow, making it visually dominant.
+
+A yellow SurroundingRectangle is drawn around “60,” and an Indicate animation briefly scales it up slightly for emphasis.
+
+At this moment, the left half still shows geometry and full ladder; right half shows the highlighted final result.
+
+---
+
+# Workspace Clearing Transition
+
+A large FadeOut animation removes:
+
+* Ladder structure
+* Ladder headers
+* Geometry heading
+* Triangle
+* Labels
+* Dimension arrows
+* Grid lines
+* Mask rectangle
+* All step explanation text except the final result
+
+The only remaining elements are:
+
+* The title
+* The highlighted “60”
+
+The “60” and its highlight box move upward to approximately 2.5 units above center, placing it near the upper-middle of the screen.
+
+The lower half of the screen is now cleared for verification content.
+
+---
+
+# Verification Sequence (Static Proof Visualization)
+
+Below the repositioned “60,” a new text block appears:
+
+“Verification:”
+“Multiples of 15: 15, 30, 45, 60…”
+“Multiples of 20: 20, 40, 60…”
+
+This block is left-aligned and positioned directly beneath the highlighted result with consistent vertical spacing.
+
+Within both lines, the number “60” is colored yellow to visually mark the first common multiple.
+
+This reinforces arithmetic validation without animation complexity.
+
+---
+
+# Final Conclusion Banner
+
+Below the verification block, a bold yellow statement fades in upward:
+
+“COLLISION CONFIRMED AT t = 60”
+
+It is centered horizontally and sits near the lower-middle of the frame.
+
+At this point, the vertical stacking is:
+
+Title (top)
+Highlighted 60
+Verification text
+Conclusion statement
+
+This creates a strong top-to-bottom logical flow.
+
+---
+
+# Final Fade to Black
+
+All visible elements fade out simultaneously:
+
+* Title
+* Highlighted 60
+* Highlight box
+* Verification text
+* Conclusion statement
+
+The scene returns to empty dark background.
+
+A short pause completes the animation.
+
+---
+
+# Structural Integrity and Relative Positioning Summary
+
+Throughout the animation:
+
+* The left half remains a stable computational workspace.
+* The right half functions as a transient explanatory channel.
+* Panels always enter centered in right half.
+* Panels always exit leftward into a mask.
+* Ladder rows are vertically spaced evenly.
+* Divisors are consistently left of ladder spine.
+* Results are consistently right of ladder spine.
+* Geometry never moves after introduction.
+* The final result becomes the sole surviving object before verification.
+
+The scene encodes:
+
+Geometry (constraint) → Arithmetic (process) → LCM (result) → Multiples (verification) → Collision confirmation.

@@ -1,0 +1,88 @@
+{
+    "0": [
+        {
+            "matching_section": "<Title>:Estimating the Product",
+            "narration_statement": "Have you ever wondered how we can quickly guess big multiplication answers? Let us find out together.",
+            "run_time": 7.59
+        }
+    ],
+    "1": [
+        {
+            "matching_section": "The chalkboard assembly enters the frame from above with a heavy, elastic bounce motion, settling into a centered position. Simultaneously, the camera frame is initialized and begins subtle continuous breathing\u2014a gentle sinusoidal zoom that oscillates in and out. Once the board stabilizes, the right rope snaps abruptly, represented by a jagged, frayed line that appears briefly before vanishing. With only the left rope remaining as a pivot, the board begins to swing like a damped pendulum around the ceiling attachment point, with oscillation amplitude gradually decaying over time. Throughout this motion, the chalk stick and duster on the tray shift slightly in response to the board's tilt, simulating inertia. The camera continues to track the moving board's center position smoothly while maintaining the breathing zoom effect. This entire environmental setup\u2014entrance, rope snap, physics activation, and camera stabilization\u2014occurs as a single compressed sequence that prepares the stage for instructional content. The board settles into a gentle, continuous swinging state that will persist throughout the remainder of the scene.",
+            "narration_statement": "Our learning adventure is about to begin.",
+            "run_time": 3.58
+        },
+        {
+            "matching_section": "While the board continues its damped swing, the title \"Estimating the Product\" fades into view at the top of the board in large, bold chalk-like text. The text elements experience subtle micro-movements\u2014tiny horizontal jitters that simulate chalk vibration or projector instability\u2014ensuring the text does not appear unnaturally rigid against the moving board. The title is positioned prominently to establish the lesson's conceptual focus and anchor the visual hierarchy of all subsequent content.",
+            "narration_statement": "Today, we will explore a super useful math skill called estimating the product. It helps us get close to the real answer very quickly.",
+            "run_time": 11.23
+        },
+        {
+            "matching_section": "Below the title, the core explanation \"To estimate the product, we first round off the numbers being multiplied\" appears with a character-by-character reveal, using a lagged animation so that letters emerge sequentially. This text remains centered on the board and maintains visual alignment with the title above. The micro-jitter updater continues to apply subtle movement to this text block, reinforcing the physical environment. The board's swinging motion persists in the background, creating dynamic visual continuity between the environment and the instructional material.",
+            "narration_statement": "To estimate the product, our first step is to round off the numbers we are going to multiply. This makes the multiplication much simpler to do in our minds.",
+            "run_time": 10.32
+        },
+        {
+            "matching_section": "The procedural rule \"We round the multiplier and multiplicand to the nearest tens, hundreds, or thousands, depending on the number of digits\" fades in below the core explanation, positioned to form a unified instructional block. This text is wrapped to fit within the board's width and maintains the same chalk-like styling and micro-jitter behavior. The rule clarifies the specific procedure learners must follow, and its sequential reveal maintains engagement as the board continues to swing.",
+            "narration_statement": "We need to round both the multiplier and the multiplicand. We choose to round them to the nearest tens, hundreds, or even thousands. This choice depends on how many digits each number has.",
+            "run_time": 15.45
+        },
+        {
+            "matching_section": "Two mathematical symbol definitions appear in sequence. First, \"The symbol '\u2248' means 'approximately equal to'\" fades in, followed by \"The symbol '=' means 'equal to' or 'actual value'.\" Each definition is positioned below the procedural rule, forming a clear vertical hierarchy. Both text blocks maintain the micro-jitter effect and are scaled consistently with the body text. The definitions establish the formal mathematical notation that will be essential for subsequent problem-solving scenes.",
+            "narration_statement": "Here are two important symbols we will use in estimating. The symbol that looks like a wavy equals sign means 'approximately equal to'. The regular equals sign means the numbers are exactly the same or have the actual value.",
+            "run_time": 18.22
+        },
+        {
+            "matching_section": "After all instructional text has fully appeared and stabilized, the remaining left rope snaps, represented by a jagged transformation followed by rapid disappearance. With no supports remaining, the chalkboard assembly loses its anchor point. The board then accelerates downward while rotating slightly, exiting the frame completely in a smooth, physics-driven fall. All updaters\u2014the swing physics, camera breathing, text jitter, and prop inertia\u2014are deactivated before this final collapse. The exit animation provides clear narrative closure, reinforces the physical metaphor established at the scene's opening, and signals the end of the conceptual introduction, preparing the viewer for transition to the next scene.",
+            "narration_statement": "Now, let us practice with some interesting examples.",
+            "run_time": 4.13
+        }
+    ],
+    "2": [
+        {
+            "matching_section": "The scene begins with a dark neutral background. The title \"Estimating the Product: Examples\" fades in at the top of the screen with an upward motion. A faint vertical line appears at the horizontal center, dividing the screen into left and right functional regions. A rectangular masking layer matching the background color is positioned over the left half to hide panels as they slide leftward. Both example problems are introduced sequentially in the left panel: \"Estimate the product of 891 x 12\" appears first with a subtle upward fade-in, followed by \"Estimate the product of 4428 x 36,\" each remaining static as a constant reference point throughout the scene. The right panel is now initialized and ready for step-by-step solutions.",
+            "narration_statement": "Let us dive into some examples to see how estimating works in action. We will practice estimating the product for different number pairs.",
+            "run_time": 10.04
+        },
+        {
+            "matching_section": "The first example begins with a temporary heading \"Example 1: 891 x 12\" appearing in the upper-right area. A reasoning panel enters below, stating \"Round 891 to the nearest hundreds (900).\" The number 891 in the left panel is highlighted with a surrounding rectangle, and 900 appears on the right side of the working area. The panel then exits by sliding leftward behind the mask. A second reasoning panel immediately enters, explaining \"Round 12 to the nearest tens (10).\" The number 12 is highlighted, and 10 appears adjacent to it in the solution space. This panel also slides leftward and disappears behind the mask.",
+            "narration_statement": "For our first example, let us estimate the product of eight hundred ninety one and twelve. We round eight hundred ninety one to the nearest hundreds, which is nine hundred. Then we round twelve to the nearest tens, making it ten.",
+            "run_time": 15.75
+        },
+        {
+            "matching_section": "A third reasoning panel enters the right panel, displaying \"Estimated Product: 900 x 10 = 9000.\" The calculation is shown with 900 and 10 highlighted, and the result 9000 appears prominently in the solution area. This panel slides leftward behind the mask. The estimated product 9000 remains visible as a reference point for the comparison that will follow.",
+            "narration_statement": "Now, we multiply our rounded numbers, nine hundred and ten. Nine hundred times ten gives us an estimated product of nine thousand. That was super quick, right?",
+            "run_time": 14.24
+        },
+        {
+            "matching_section": "The actual product calculation for 891 x 12 begins using full vertical multiplication layout. A reasoning panel enters explaining the first multiplication step: \"Multiply 891 by 2.\" The digit 2 is highlighted in the multiplier, and the partial product 1782 appears below the horizontal line with all intermediate steps visible (carries shown above relevant digits). The panel slides leftward. A second reasoning panel enters for the next step: \"Multiply 891 by 10.\" The digit 1 (representing 10) is highlighted, and the partial product 8910 appears on the next line, positioned one place to the left. This panel also exits leftward. A final reasoning panel enters for the addition step: \"Add partial products: 1782 + 8910 = 10692.\" Both partial products are highlighted, and the final answer 10692 appears below a horizontal line with all carries shown. This panel slides out.",
+            "narration_statement": "To find the actual product, we carefully multiply eight hundred ninety one by twelve. First, we multiply eight hundred ninety one by two to get one thousand seven hundred eighty two. Then we multiply eight hundred ninety one by ten to get eight thousand nine hundred ten. Adding these two results gives us the exact product of ten thousand six hundred ninety two.",
+            "run_time": 28.03
+        },
+        {
+            "matching_section": "A comparison panel appears displaying \"Estimated: 9000 \u2248 Actual: 10692.\" Both values are highlighted to show the relationship between the estimate and the actual product. This panel remains briefly for emphasis, then slides leftward behind the mask. All elements related to Example 1's solution (the multiplication layout, intermediate results, and comparison) fade out or slide off to the right, clearing the right panel completely while the left panel problems remain visible.",
+            "narration_statement": "See how our estimate of nine thousand is quite close to the actual product of ten thousand six hundred ninety two? Estimating helps us check if our precise answer makes sense.",
+            "run_time": 13.54
+        },
+        {
+            "matching_section": "The second example begins identically to the first. A temporary heading \"Example 2: 4428 x 36\" appears in the upper-right area. A reasoning panel enters stating \"Round 4428 to the nearest thousands (4000).\" The number 4428 in the left panel is highlighted, and 4000 appears in the solution space. The panel exits leftward. A second reasoning panel enters: \"Round 36 to the nearest tens (40).\" The number 36 is highlighted, and 40 appears adjacent to 4000. This panel also exits leftward. A third panel displays \"Estimated Product: 4000 x 40 = 1,60,000.\" The calculation is shown with highlighting, and the result 1,60,000 appears prominently.",
+            "narration_statement": "For our second example, we will estimate the product of four thousand four hundred twenty eight and thirty six. We round four thousand four hundred twenty eight to the nearest thousands, which is four thousand. Then, thirty six is rounded to the nearest tens, becoming forty. Multiplying four thousand by forty gives us an estimated product of one lakh sixty thousand.",
+            "run_time": 26.27
+        },
+        {
+            "matching_section": "The actual product calculation for 4428 x 36 proceeds with full vertical multiplication. A reasoning panel explains \"Multiply 4428 by 6.\" The digit 6 is highlighted, and the partial product 26568 appears with all carries shown. The panel exits leftward. A second reasoning panel enters: \"Multiply 4428 by 30.\" The digits 3 and 0 are highlighted, and the partial product 132840 appears on the next line, positioned two places to the left. This panel exits. A final reasoning panel explains \"Add partial products: 26568 + 132840 = 1,59,408.\" Both partial products are highlighted, and the final answer 1,59,408 appears below the horizontal line with all carries visible. This panel slides out.",
+            "narration_statement": "Let us find the actual product of four thousand four hundred twenty eight and thirty six. Multiplying four thousand four hundred twenty eight by six gives us twenty six thousand five hundred sixty eight. Then, multiplying four thousand four hundred twenty eight by thirty gives us one lakh thirty two thousand eight hundred forty. Adding these two numbers together, the actual product is one lakh fifty nine thousand four hundred eight.",
+            "run_time": 28.55
+        },
+        {
+            "matching_section": "A comparison panel appears displaying \"Estimated: 1,60,000 \u2248 Actual: 1,59,408.\" Both values are highlighted to show how close the estimate is to the actual product. This panel slides leftward behind the mask. All solution elements from the right panel (multiplication layouts and intermediate results) fade out or slide off to the right, clearing the workspace.",
+            "narration_statement": "Our estimated product of one lakh sixty thousand is very close to the actual product of one lakh fifty nine thousand four hundred eight. Isn't it wonderful how close we can get with estimation?",
+            "run_time": 14.16
+        },
+        {
+            "matching_section": "The workspace clearing phase begins. All problem statements from the left panel slide off-screen to the left simultaneously. All remaining elements from the right panel slide off-screen to the right simultaneously. Only the title \"Estimating the Product: Examples\" remains visible at the top of the screen. A concluding sentence appears centrally below the title: \"Estimating helps us find answers quickly and check if our actual answer is reasonable!\" Key terms within this sentence\u2014such as \"Estimating,\" \"quickly,\" and \"reasonable\"\u2014are highlighted with subtle color changes or surrounding rectangles to reinforce the main concepts. After a brief pause, all remaining elements (title, concluding sentence, and highlights) fade out simultaneously, returning the screen to the empty dark background.",
+            "narration_statement": "Estimating products helps us find answers quickly when we do not need an exact value. It also helps us make sure our precise calculations are reasonable.",
+            "run_time": 14.31
+        }
+    ]
+}

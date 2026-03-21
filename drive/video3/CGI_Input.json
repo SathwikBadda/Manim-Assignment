@@ -1,0 +1,73 @@
+{
+    "0": [
+        {
+            "matching_section": "<Title>:Multiplication by 2-digit Numbers",
+            "narration_statement": "How do we multiply big numbers when they have two digits? Let us discover a super helpful method together.",
+            "run_time": 8.71
+        }
+    ],
+    "1": [
+        {
+            "matching_section": "The scene opens on a dark neutral background (#2C3336). The title \"Multiplication by 2-Digit Numbers\" appears near the top of the screen, centered horizontally, using a FadeIn animation with a slight upward motion. Below the title, a faint vertical guide line (stroke_width=1, color=GRAY, stroke_opacity=0.3) is created to divide the screen into left and right functional regions. A large rectangular mask matching the background color is placed over the left half of the screen, positioned above animated panels but below the title, with z_index=2. This mask remains stationary throughout the scene to hide instructional panels as they slide leftward. The left panel is initialized with the multiplication problem: the numbers 53 and 16 are written vertically and aligned by place value, with a multiplication symbol (\u00d7) to the right of 53 and 16 positioned below it. A horizontal line is drawn beneath 16 to complete the standard vertical multiplication layout. The numbers and lines enter via Create animations for the lines and Write animations for the numbers, positioning them in the left-center area of the screen. This visual setup remains stable and serves as the persistent canvas for the calculation. The right panel is initialized with a heading \"Multiply Step by Step\" appearing via a Write animation in the upper-right area. All environmental setup is now complete, with the screen showing the problem context on the left and the prepared solution workspace on the right.",
+            "narration_statement": "Let us begin with an exciting new multiplication challenge.",
+            "run_time": 5.42
+        },
+        {
+            "matching_section": "The first reasoning panel appears in the lower-right area via a Write animation, stating \"Step 1: Multiply by the ones digit.\" Below the problem on the left, a SurroundingRectangle with color=#EF9515 briefly highlights the digit 6 in 16, drawing attention to the ones place. The calculation \"53 \u00d7 6 = 318\" then appears aligned as the first partial product row on the left side below the horizontal line, entering via a Write animation. Any carried digits (in this case, the 1 from 6 \u00d7 3 = 18) are briefly animated into their correct column position before stabilizing. The reasoning panel pauses briefly to allow processing.",
+            "narration_statement": "First, we multiply the top number, 53, by the ones digit of the bottom number, which is 6. This multiplication of 53 by 6 gives us a partial product of 318.",
+            "run_time": 14.28
+        },
+        {
+            "matching_section": "The first reasoning panel slides leftward and disappears behind the stationary left mask via an animate.shift(LEFT) action. A new reasoning panel appears in the lower-right area via a Write animation, stating \"Step 2: Multiply by the tens digit.\" The digit 1 in 16 on the left is highlighted with a SurroundingRectangle (color=#EF9515). The calculation \"53 \u00d7 10 = 530\" appears as the second partial product row on the left, positioned directly below the first partial product (318). The automatic placement of a zero in the ones place is emphasized with a subtle flash animation or brief Indicate action to highlight the structural significance of place value. The reasoning panel pauses briefly.",
+            "narration_statement": "Next, we multiply 53 by the tens digit of the bottom number, which is 1. Since it is a tens digit, we place a zero first, then 53 times 1 gives us 530.",
+            "run_time": 15.15
+        },
+        {
+            "matching_section": "The second reasoning panel slides leftward and disappears behind the left mask. A final reasoning panel appears in the lower-right area via a Write animation, stating \"Step 3: Add the partial products.\" The two partial product rows (318 and 530) on the left are highlighted together using a SurroundingRectangle (color=#EF9515) encompassing both rows. A new horizontal line appears below the partial products via a Create animation. The sum \"848\" then appears below this line via a Write animation, completing the vertical multiplication layout. The reasoning panel pauses briefly.",
+            "narration_statement": "Finally, we add these two partial products, 318 and 530, together to find our total. This addition gives us our final answer of 848.",
+            "run_time": 13.04
+        },
+        {
+            "matching_section": "Silence",
+            "narration_statement": "silence",
+            "run_time": 3.0
+        },
+        {
+            "matching_section": "The third reasoning panel slides leftward and disappears behind the left mask. All contextual elements on the left panel (the initial problem setup, partial products, and intermediate lines) fade out simultaneously via FadeOut animations. The final result \"848\" moves to a central, prominent location below the title via an animate.move_to action, repositioning it to [0, 2.0, 0]. A highlight box appears around 848 using a SurroundingRectangle (color=#EF9515, buff=0.15) with Create animation, and the result briefly scales up via animate.scale(1.2) for emphasis. A concluding sentence appears beneath the result via a Write animation, reading \"So, 53 \u00d7 16 = 848,\" with the numbers 53, 16, and 848 displayed in a matching highlight color (#EF9515) to reinforce the connection between inputs and output. All remaining elements (title, final result, highlight box, and concluding sentence) fade out simultaneously via FadeOut animations, returning the screen to the empty dark background.",
+            "narration_statement": "Wonderful! We found that 53 multiplied by 16 equals 848. You have just completed your very first 2-digit multiplication problem, great job!",
+            "run_time": 14.97
+        }
+    ],
+    "2": [
+        {
+            "matching_section": "The scene opens on a dark neutral background. The title \"Multiplying Larger Numbers\" enters via FadeIn with a slight upward shift, positioned centered at the top of the frame. A faint vertical guide line appears at the horizontal center, establishing the split-screen structure. A rectangular masking layer matching the background color is positioned over the left half of the screen, sitting above animated content but below the title, to create clean wipe effects as panels exit. The left panel is now prepared to display the problem setup. The problem \"144 \u00d7 28\" is introduced with place value labels \"Th H T O\" displayed above the numbers. The digits are rendered in a vertical multiplication layout using Write animations for the numbers and Create for structural lines. This stable visual context anchors the entire calculation sequence. The right panel initialization displays a heading \"Step-by-Step Multiplication\" via Write animation, positioned in the upper-right area. Below this, the framework for the solution is established, with space reserved for partial products and the final sum. A horizontal line appears to mark the computation boundary. All environmental setup is now complete, and the scene is ready for step-by-step reasoning.",
+            "narration_statement": "Let us try multiplying even bigger numbers using the same steps.",
+            "run_time": 4.61
+        },
+        {
+            "matching_section": "A reasoning panel appears in the lower-right region via Write animation, stating \"Step 1: Multiply by the ones digit.\" The digit 8 in 28 on the left panel is highlighted with a yellow SurroundingRectangle, directing attention to the active element. The multiplication \"144 \u00d7 8\" is performed, and the partial product \"1152\" appears on the left panel as the first result row. Carry-over digits briefly animate into view before fading out, showing the intermediate steps of the calculation. The panel pauses momentarily to allow comprehension, then slides leftward and disappears behind the masking layer, clearing the instructional workspace.",
+            "narration_statement": "First, we multiply 144 by the ones digit from 28, which is 8. This multiplication of 144 by 8 gives us the partial product of 1152.",
+            "run_time": 13.03
+        },
+        {
+            "matching_section": "A new reasoning panel enters via Write animation, stating \"Step 2: Multiply by the tens digit.\" The digit 2 in 28 on the left panel is highlighted with a yellow SurroundingRectangle. The multiplication \"144 \u00d7 20\" is performed dynamically, with the product \"2880\" appearing as the second partial product row on the left. The zero is explicitly placed in the ones column, visually demonstrating the place value shift for the tens multiplication. The panel pauses, then slides leftward and exits behind the mask.",
+            "narration_statement": "Next, we multiply 144 by the tens digit from 28, which is 2. Since it represents 20, we first place a zero in the ones place, giving us 2880.",
+            "run_time": 14.43
+        },
+        {
+            "matching_section": "A reasoning panel appears stating \"Step 3: Add the partial products.\" Both partial product rows (1152 and 2880) on the left are highlighted simultaneously using a SurroundingRectangle or color emphasis. A new horizontal line appears below the partial products. The addition is performed, and the final sum \"4032\" is displayed below the line. The panel pauses briefly, then exits leftward behind the mask. At this point, all intermediate calculation elements and the structural framework on the left begin to recede and fade out simultaneously, while the final answer remains visible.",
+            "narration_statement": "Now, we just need to add our two partial products, 1152 and 2880, together. This addition will give us the final answer of 4032.",
+            "run_time": 13.63
+        },
+        {
+            "matching_section": "Silence",
+            "narration_statement": "silence",
+            "run_time": 3.0
+        },
+        {
+            "matching_section": "The isolated final answer \"4032\" moves to a central, prominent position below the title via a smooth animation. A highlight box appears around the result using Create animation, and the number briefly scales up for emphasis. A concluding sentence, \"So, 144 \u00d7 28 = 4032,\" enters via Write animation, positioned directly beneath the highlighted result. This sentence reconnects the abstract numerical result to the original problem statement. All elements\u2014title, final result, highlight box, and concluding sentence\u2014pause briefly to allow learners to absorb the solution, then fade out simultaneously via a unified FadeOut animation. The scene returns to the empty dark background, concluding the problem-solving sequence.",
+            "narration_statement": "Wonderful! We found that 144 multiplied by 28 equals 4032. You are doing a fantastic job becoming a true multiplication expert!",
+            "run_time": 13.89
+        }
+    ]
+}

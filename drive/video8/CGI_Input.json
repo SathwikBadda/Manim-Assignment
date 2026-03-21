@@ -1,0 +1,157 @@
+{
+    "0": [
+        {
+            "matching_section": "<Title>:Divisibility Rules",
+            "narration_statement": "How can we quickly tell if one number divides another perfectly? Let us uncover some clever rules that make division super easy!",
+            "run_time": 10.64
+        }
+    ],
+    "1": [
+        {
+            "matching_section": "The chalkboard assembly enters the frame from above with a heavy, elastic drop motion, settling into the center of the stage. As it stabilizes, the right supporting rope suddenly snaps with a jagged, irregular break, leaving only the left rope intact. The board immediately begins to swing like a pendulum from the remaining left anchor point, with the oscillation gradually decaying over time. The camera subtly breathes and follows the board's motion to maintain framing. Small props (chalk and duster) rest on the wooden tray at the base of the board and respond to the board's tilt with minor shifts. The environment is established as a reactive, physically grounded classroom space with a dark background (#0f1715). All text and visual elements are initially set to transparent and will appear as the board continues its gentle swinging motion throughout the scene.",
+            "narration_statement": "Get ready for some amazing number discoveries!",
+            "run_time": 3.77
+        },
+        {
+            "matching_section": "The concept title \"Divisibility Rules: Quick Checks!\" appears at the top of the board using a chalk-style font in bright green (#61D262), with each character fading in sequentially while the board continues to swing. Below the title, the core explanation \"Seeing if one number can be divided by another perfectly, without any leftovers!\" is revealed character by character in white text, establishing the foundational definition of divisibility. Both text elements exhibit subtle micro-movements that mimic chalk vibration, reinforcing the physical nature of the board. The text is positioned well within the board's boundaries and maintains strong visual hierarchy through scale and color contrast.",
+            "narration_statement": "Divisibility rules are like quick checks to see if one number can be divided by another perfectly. This means there are no leftovers, or no remainder, after the division.",
+            "run_time": 13.6
+        },
+        {
+            "matching_section": "The first divisibility rule \"If the last digit is 0, 2, 4, 6, or 8, it's divisible by 2.\" appears in orange accent text (#EF9515) below the core explanation. Immediately following, two example numbers are displayed: \"24\" with the digit \"4\" at the ones place highlighted in a contrasting color, and \"437\" with the digit \"7\" highlighted. The examples are positioned side by side on the board, clearly demonstrating the rule's application. Each example text and digit highlight fades in and is emphasized with a subtle wiggle animation to direct attention to the critical ones place. The board continues swinging throughout this reveal.",
+            "narration_statement": "Our first rule helps us know if a number is divisible by two. If the very last digit is zero, two, four, six, or eight, then the whole number is divisible by two. For instance, twenty-four is divisible by two because its last digit is four.",
+            "run_time": 20.48
+        },
+        {
+            "matching_section": "The second divisibility rule \"If the last digit is 0 or 5, it's divisible by 5.\" appears in orange text below the rule for 2. Two examples follow: \"1670\" with the \"0\" highlighted, and \"2342\" with the \"2\" highlighted. The examples are arranged in a clear visual layout that mirrors the structure of the previous rule section. Each example is revealed with its corresponding digit highlight appearing in sequence, maintaining consistency with the established pattern. The board's pendulum motion continues uninterrupted in the background.",
+            "narration_statement": "Next, let us explore the rule for five. A number is divisible by five if its last digit is either zero or five. Think of one thousand six hundred seventy, it ends in zero, so it is divisible by five.",
+            "run_time": 15.74
+        },
+        {
+            "matching_section": "The third divisibility rule \"If the last digit is 0, it's divisible by 10.\" appears in orange text, completing the set of three core rules. Two final examples are displayed: \"390\" with the \"0\" highlighted, and \"4585\" with the \"5\" highlighted. All three rules and their examples are now visible on the board, creating a cohesive, well-organized reference layout. The examples maintain consistent visual styling and positioning logic. The entire content block is positioned to fit comfortably within the board's writing area without overflow.",
+            "narration_statement": "The rule for ten is super simple to remember. Any number that ends with a zero is divisible by ten. For instance, three hundred ninety ends in zero, so it is divisible by ten.",
+            "run_time": 13.13
+        },
+        {
+            "matching_section": "After all rules and examples have been fully displayed and the board's swinging motion has nearly stabilized, the updater functions controlling the swing, camera breathing, and chalk slide effects are deactivated. The left supporting rope then snaps with a jagged, irregular break effect, leaving the board completely unsupported. The board falls downward out of the frame while rotating slightly, and all content (text and examples) shrinks and fades away as the board descends. The final exit animation uses a downward shift combined with a clockwise rotation, providing a clear sense of closure and completion as the instructional moment concludes.",
+            "narration_statement": "What wonderful rules we have learned!",
+            "run_time": 3.05
+        }
+    ],
+    "2": [
+        {
+            "matching_section": "The scene opens with the light pastel background (#E0F7FA) already established. A static header bar (teal rectangle, full width, positioned at the top edge) and a decorative footer (repeating punch-hole circles in primary colors, positioned at the bottom edge) are added immediately via self.add() without animation, establishing persistent UI anchors that will remain visible throughout all subsequent instructional phases. The header and footer frame the workspace like a notebook page, signaling a unified learning environment. Once these static elements are in place, the title introduction begins: colorful rounded blocks fall from above in a staggered sequence, each block carrying a single letter spelling \"Divisibility by 3 & 9\". The drop animation uses ease_out_bounce easing to simulate gravity and impact, with each block settling into its final horizontal and vertical position after bouncing. The blocks are arranged in a centered grid layout that respects the available frame width. Once all blocks have settled, a subtitle \"Look at the sum of digits!\" appears below the title blocks through a GrowFromCenter animation with elastic easing, making the text \"pop\" into view. The subtitle provides conceptual focus after the playful block introduction. After the subtitle has been visible for sufficient time, both the title blocks and subtitle are cleared: the subtitle fades out with a downward shift, and all title blocks shrink to their center points and disappear simultaneously. This clean removal signals the transition from attention capture into focused instructional content, clearing the visual workspace without leaving residual clutter.",
+            "narration_statement": "Let us discover more cool divisibility secrets.",
+            "run_time": 3.94
+        },
+        {
+            "matching_section": "A large rounded rectangular card appears with a prominent \"RULE\" badge. The card is drawn with DrawBorderThenFill, starting with the border outline and filling with white, establishing visual weight and authority. Simultaneously, a star-shaped badge labeled \"RULE\" spins into place at the upper-left corner of the card using SpinInFromNothing, marking the content as a key takeaway. The rule text for divisibility by 3 is then written into the card using the Write animation: \"A number is divisible by 3 if the sum of its digits is divisible by 3.\" Within this rule text, the phrases \"sum of its digits\" and \"divisible by 3\" are highlighted in a contrasting color (magenta or bright pink) using MarkupText formatting, drawing visual attention to the critical pattern without fragmenting the sentence structure. The rule card and its badge remain centered in the upper-middle portion of the frame. After the text has been written, a brief Indicate animation subtly emphasizes the entire rule card by scaling it slightly and flashing its border color, reinforcing importance without introducing new elements. The card is then allowed to remain visible for a moment before fading out completely along with the badge and text, clearing the workspace for the next instructional phase.",
+            "narration_statement": "Here is an interesting rule for divisibility by three. If you add up all the digits in a number, their sum must be divisible by three. Then, the original number is also perfectly divisible by three.",
+            "run_time": 16.58
+        },
+        {
+            "matching_section": "Two example cards appear in sequence, each demonstrating the divisibility rule for 3 through a handmade-style presentation. The first example card shows the number 3528. The card is a rounded rectangle with a light cream or yellow background, bordered in black, and includes decorative tape-strip elements at the top for a scrapbook aesthetic. Inside the card, the digit-by-digit sum calculation is revealed step-by-step: first \"3 + 5 + 2 + 8\" appears, followed by \"= 18\" on the next line. Beneath this, the division check \"18 \u00f7 3 = 6\" is shown, with the result displayed prominently. Finally, the conclusion \"3528 is divisible by 3!\" appears at the bottom of the card in a celebratory color. The second example card shows the number 1394 and follows the same layout. The calculation \"1 + 3 + 9 + 4 = 17\" is revealed, followed by \"17 \u00f7 3\" with a visual remainder indicator (such as a small \"R\" or a fractional notation) suggesting that division does not result in a whole number. The conclusion \"1394 is NOT divisible by 3!\" appears in a neutral or cautionary color. Both cards are animated into view using GrowFromCenter with staggered timing via LaggedStart, making each card feel like a tangible object being placed into the workspace. Each step within a card (sum calculation, division, conclusion) is revealed sequentially using Write or FadeIn animations, allowing learners to process each phase of the reasoning. After both examples have been displayed and the pattern has been reinforced, both cards fade out, clearing the space for the next rule.",
+            "narration_statement": "Let us try with three thousand five hundred twenty-eight; its digits add up to eighteen. Since eighteen is divisible by three, three thousand five hundred twenty-eight is also divisible by three. However, for one thousand three hundred ninety-four, the sum is seventeen, which cannot be divided by three.",
+            "run_time": 24.6
+        },
+        {
+            "matching_section": "A second large rounded rectangular card appears with the same visual treatment as the first rule card: DrawBorderThenFill for the card body and SpinInFromNothing for the \"RULE\" badge. This card presents the divisibility rule for 9: \"A number is divisible by 9 if the sum of its digits is divisible by 9.\" The phrases \"sum of its digits\" and \"divisible by 9\" are highlighted in the same contrasting color as before, maintaining visual consistency and reinforcing the parallel structure between the two rules. The Write animation reveals the rule text, and an Indicate animation briefly emphasizes the card. The rule card remains centered in the upper-middle portion of the frame, mirroring the position and visual weight of the first rule card.",
+            "narration_statement": "The divisibility rule for nine is quite similar to the rule for three. If the sum of a number's digits is divisible by nine, then the number itself is also divisible by nine.",
+            "run_time": 13.08
+        },
+        {
+            "matching_section": "Two additional example cards appear, demonstrating the divisibility rule for 9. The first card shows the number 9711. Using the same handmade-style design as the previous examples, the card displays the sum \"9 + 7 + 1 + 1 = 18\" with each step revealed sequentially, followed by \"18 \u00f7 9 = 2\", and concluding with \"9711 is divisible by 9!\" in a celebratory color. The second card shows the number 5423, with the sum \"5 + 4 + 2 + 3 = 14\" revealed step-by-step, followed by \"14 \u00f7 9\" with a visual remainder indicator, and the conclusion \"5423 is NOT divisible by 9!\" in a neutral color. Both cards enter the frame using GrowFromCenter with LaggedStart timing, and each internal step (sum, division, conclusion) is revealed sequentially. After both examples have been displayed and the second rule has been fully reinforced through concrete instances, both cards fade out.",
+            "narration_statement": "For nine thousand seven hundred eleven, the digits add up to eighteen. Since eighteen is divisible by nine, nine thousand seven hundred eleven is also divisible by nine. However, for five thousand four hundred twenty-three, the sum is fourteen, which cannot be divided by nine.",
+            "run_time": 18.6
+        },
+        {
+            "matching_section": "A full-screen celebratory sequence activates, providing emotional closure and positive reinforcement. The animation begins with the appearance of a sunburst effect: twenty AnnularSector rays arranged radially around the center of the frame, colored in yellow tones with reduced opacity, creating a glowing radiant backdrop. A large star shape (seven-pointed, yellow fill with orange stroke) grows from the center using GrowFromCenter with elastic easing, appearing to burst outward. Simultaneously, the rays begin rotating continuously using Rotate with a linear rate function, creating the illusion of a spinning sunburst. Bold congratulatory text \"Great Job!\" appears at the center using GrowFromCenter, styled in red with a white stroke outline for visibility and emphasis. Below the star, the supporting text \"Keep Practicing!\" fades in with an upward shift. Confetti elements\u2014fifty small squares in random primary colors\u2014are generated at the center and then dispersed outward through a LaggedStart animation, with each square shifting to a random position in the frame and rotating randomly, simulating an explosion effect. The rays continue rotating throughout the confetti dispersal, layering multiple motion elements into a coordinated celebration. This sequence lingers for several seconds, generating satisfaction and emotional payoff without overstimulation. Following the celebration, all celebratory elements (rays, star, congratulatory text, supporting text, and confetti) fade out completely, and the static header bar and footer remain briefly before they too fade, concluding the scene with a clean visual reset.",
+            "narration_statement": "You are doing a great job, keep practicing!",
+            "run_time": 3.53
+        }
+    ],
+    "3": [
+        {
+            "matching_section": "The scene opens on a dark neutral background. A rectangular header panel appears at the center of the screen and scales outward using a GrowFromCenter animation. The title \"More Divisibility Rules!\" fades into view with a subtle downward drift. Below it, the subtitle \"Look for patterns in groups of digits or combined rules!\" appears using Write. The completed header structure then animates upward to lock into position near the top of the frame, creating a stable anchor for the content that follows. Simultaneously, the camera performs a subtle breathing zoom to establish visual focus. No other elements are visible at this stage.",
+            "narration_statement": "Are you ready for some more exciting rules?",
+            "run_time": 2.9
+        },
+        {
+            "matching_section": "A wide rectangular concept panel expands horizontally from a collapsed state beneath the header, growing outward from its left edge. Inside the panel, centered text reads \"Sometimes we look at the last few digits, or combine rules!\" and is revealed letter-by-letter using AddTextLetterByLetter. This gradual reveal encourages progressive reading. After the viewer has absorbed the explanation, the panel fades away and collapses back toward its origin, clearing the stage for the four-quadrant example layout that follows.",
+            "narration_statement": "Sometimes, we need to look at just the last few digits of a number. Other times, we combine two rules to find our answer.",
+            "run_time": 10.27
+        },
+        {
+            "matching_section": "The screen is now conceptually divided into four quadrants: top-left, top-right, bottom-left, and bottom-right. The number '5200' appears in the top-left quadrant using GrowFromCenter, positioned at the center of that region. The camera zooms slightly toward this object to establish focus. Below the number, text reads \"Rule for 4: Last two digits are 00 or divisible by 4.\" The last two digits '00' are highlighted in a bright accent color. Additional text appears: \"'00' is divisible by 4. So 5200 is divisible by 4!\" Key phrases including \"Last two digits\" and \"00\" are emphasized with highlight coloring. The camera then restores to full frame view.",
+            "narration_statement": "To check for divisibility by four, we only need to look at the last two digits of a number. If those last two digits form a number that is divisible by four, then the whole number is too. For example, five thousand two hundred has 'zero zero', which is divisible by four.",
+            "run_time": 19.56
+        },
+        {
+            "matching_section": "The number '8512' appears in the top-right quadrant using GrowFromCenter. The camera zooms toward this object. The last two digits '12' are highlighted. Text appears: \"Rule for 4: Last two digits are 00 or divisible by 4.\" followed by \"'12' is divisible by 4. So 8512 is divisible by 4!\" The phrases \"Last two digits\" and \"12\" are emphasized with highlight coloring. The camera restores to full frame view. All previously shown content from the top-left quadrant remains visible.",
+            "narration_statement": "Let us try eight thousand five hundred twelve. The last two digits are twelve, and twelve is perfectly divisible by four. This means that eight thousand five hundred twelve is also divisible by four.",
+            "run_time": 14.54
+        },
+        {
+            "matching_section": "The number '324' appears in the bottom-left quadrant using GrowFromCenter. The camera zooms toward this object. The last digit '4' is highlighted as even. The digit sum '3+2+4=9' is displayed below the number, with '9' highlighted as divisible by 3. Text explains: \"Rule for 6: Divisible by both 2 AND 3. 324 is divisible by 2 and 3. So 324 is divisible by 6!\" The phrases \"Last digit\", \"divisible by 2\", and \"divisible by 3\" are emphasized with highlight coloring. The camera restores to full frame view.",
+            "narration_statement": "A number is divisible by six if it can be divided by both two and three. Three hundred twenty-four ends in an even digit, making it divisible by two. Its digits sum to nine, divisible by three, so three hundred twenty-four is divisible by six.",
+            "run_time": 18.65
+        },
+        {
+            "matching_section": "The number '5192' appears in the bottom-right quadrant using GrowFromCenter. The camera zooms toward this object. The last three digits '192' are highlighted. The division '192 \u00f7 8 = 24' is displayed below the number. Text states: \"Rule for 8: Last three digits form a number divisible by 8. '192' is divisible by 8. So 5192 is divisible by 8!\" The phrases \"Last three digits\" and \"192\" are emphasized with highlight coloring. The camera restores to full frame view. All four examples now remain visible simultaneously, forming a balanced quadrant grid.",
+            "narration_statement": "For divisibility by eight, we check the number formed by the last three digits. If one hundred ninety-two is divisible by eight, then the whole number is too. Indeed, one hundred ninety-two divided by eight equals twenty-four.",
+            "run_time": 18.24
+        },
+        {
+            "matching_section": "After a brief pause, all four example groups begin a synchronized collapse sequence. Using LaggedStart, each example shrinks and moves toward the header region one after another. Each example reduces in size, fades slightly using set_opacity, and travels toward the header panel's center point. Once all examples have disappeared into the header area, a bright Flash animation appears around the header panel as a final visual emphasis signal. The header then animates upward and exits the frame using an upward shift animation. The scene returns to the empty dark background, concluding the instructional sequence.",
+            "narration_statement": "You are becoming a divisibility rule expert!",
+            "run_time": 5.18
+        }
+    ],
+    "4": [
+        {
+            "matching_section": "The scene begins with a dark neutral background. The title \"Divisibility by 11: A Special Rule\" appears near the top center using FadeIn with upward motion. Below the title, a faint vertical guide line is drawn at the horizontal center using Create, establishing a subtle visual division between left and right panels. The left panel anchor is positioned at approximately one-quarter from the left edge, and the right panel anchor is positioned at approximately one-quarter from the right edge. A rectangular masking layer matching the background color is placed over the left half of the screen and set to a higher z-index to hide elements as they slide leftward. The scene stabilizes with the title, grid line, and mask all in place, establishing the split-screen workspace for the divisibility check.",
+            "narration_statement": "Now for a special rule: divisibility by eleven.",
+            "run_time": 4.84
+        },
+        {
+            "matching_section": "In the left panel, the heading \"Check 95469 for Divisibility by 11\" appears using FadeIn with upward motion, positioned below the title line. Immediately below, the number 95469 is displayed prominently in large font. Each digit of 95469 is then sequentially marked with its positional label and parity. The digit 9 (first position, odd) appears with the label \"1st-odd\" positioned below or beside it using FadeIn. The digit 5 (second position, even) receives the label \"2nd-even\". The digit 4 (third position, odd) receives the label \"3rd-odd\". The digit 6 (fourth position, even) receives the label \"4th-even\". The digit 9 (fifth position, odd) receives the label \"5th-odd\". All position labels are rendered in a smaller, contrasting font color to distinguish them from the main digits. The left panel now displays the complete annotated number, serving as a stable visual reference throughout the solution process.",
+            "narration_statement": "To check if a number like ninety-five thousand four hundred sixty-nine is divisible by eleven, we use a unique method. We identify digits based on their position, whether it is an odd or even place.",
+            "run_time": 15.27
+        },
+        {
+            "matching_section": "In the right panel, the heading \"Steps to Check Divisibility by 11\" appears using Write animation, positioned at the top-right anchor. Below this heading, a horizontal separator line is drawn using Create to demarcate the solution workspace. The first step panel appears in the lower-right region using Write animation. The panel contains the text \"Step 1: Identify Odd and Even Places\" on the first line. Simultaneously, on the left panel, the digits in odd positions (9, 4, 9) are highlighted using a colored box or pulse animation in one color (e.g., gold or cyan), and the digits in even positions (5, 6) are highlighted in a contrasting color. The highlighting emphasizes the positional grouping without obscuring the digits. After a brief pause, the step panel slides leftward out of view, hidden by the masking layer, using a smooth shift animation.",
+            "narration_statement": "Our first step is to carefully identify the digits in odd places and those in even places. Remember, we count positions from the right, starting with the first digit.",
+            "run_time": 12.58
+        },
+        {
+            "matching_section": "The second step panel appears in the lower-right region using Write animation, displaying \"Step 2: Sum of Digits in Odd Places\". Directly below or to the right, the calculation \"9 + 4 + 9 = 22\" is rendered in a clear, large font using FadeIn. The digits 9, 4, and 9 in the left panel are highlighted again to reinforce which values are being summed. The result 22 is visually emphasized with a subtle box or color highlight. After a brief pause, this panel slides leftward and disappears behind the mask.",
+            "narration_statement": "Next, we will sum up all the digits that are in the odd positions. For ninety-five thousand four hundred sixty-nine, the odd digits are nine, four, and nine, which add up to twenty-two.",
+            "run_time": 14.91
+        },
+        {
+            "matching_section": "The third step panel appears using Write animation, displaying \"Step 3: Sum of Digits in Even Places\". Below it, the calculation \"5 + 6 = 11\" appears using FadeIn in a similarly prominent font. The digits 5 and 6 in the left panel are highlighted to show which values are being summed. The result 11 is emphasized with a highlight box. After a brief pause, this panel slides leftward and exits.",
+            "narration_statement": "Now, let us do the same for the digits in the even positions. We will add them all together to find their total sum. For our number, the even position digits are five and six, which sum up to eleven.",
+            "run_time": 16.14
+        },
+        {
+            "matching_section": "The fourth step panel appears using Write animation, displaying \"Step 4: Find the Difference\". Below it, the calculation \"22 - 11 = 11\" appears using FadeIn. The result 11 is surrounded by a highlight box and briefly scales up using a pulse or scale animation to draw attention to this intermediate result. After a brief pause, this panel slides leftward and exits.",
+            "narration_statement": "Our next step is to find the difference between these two sums we just calculated. We subtract the smaller sum from the larger sum. Twenty-two minus eleven gives us a difference of eleven.",
+            "run_time": 14.93
+        },
+        {
+            "matching_section": "The fifth and final step panel appears using Write animation, displaying \"Step 5: Check if Difference is Divisible by 11\". Below it, the calculation \"11 \u00f7 11 = 1\" appears using FadeIn, followed immediately by the confirmatory text \"Yes, 11 is divisible by 11!\" rendered in a color that matches the success theme (e.g., green or bright cyan). The result 11 is highlighted with a box to reinforce that the divisibility condition is met. After a brief pause, this panel slides leftward and exits.",
+            "narration_statement": "Finally, we check if this difference is zero or divisible by eleven. Our difference is eleven, and since eleven is perfectly divisible by eleven, the original number follows the rule.",
+            "run_time": 13.84
+        },
+        {
+            "matching_section": "After all step panels have exited, a final result panel appears in the right panel area using Write animation, displaying \"Result: Divisible by 11!\" in bold, prominent font. The workspace clearing transition then begins: all remaining elements in the left panel (the heading, the annotated number 95469, and all position labels) slide leftward and exit behind the mask simultaneously. All remaining elements in the right panel (the heading, separator line, and any lingering calculation displays) slide rightward and exit off-screen simultaneously. Only the final result \"Result: Divisible by 11!\" remains visible, positioned in its original location.",
+            "narration_statement": "This means that ninety-five thousand four hundred sixty-nine is indeed divisible by eleven. What a clever way to check large numbers without long division!",
+            "run_time": 12.48
+        },
+        {
+            "matching_section": "The isolated final result moves to the center of the screen, positioned prominently below the title, using a smooth Transform animation. Below the centered result, a narrative conclusion appears using FadeIn with upward motion. The conclusion reads \"So, the number 95469 IS divisible by 11!\" with the number 95469 and the word divisible rendered in a contrasting highlight color to connect back to the original problem. After a brief pause for emphasis, all remaining elements\u2014the title, the centered result, the highlight box (if present), and the concluding sentence\u2014fade out simultaneously using FadeOut. The screen returns to the dark neutral background, concluding the scene.",
+            "narration_statement": "So, we have confirmed that the number ninety-five thousand four hundred sixty-nine is divisible by eleven. You have learned a very special and useful divisibility trick today.",
+            "run_time": 15.48
+        }
+    ]
+}

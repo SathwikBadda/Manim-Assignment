@@ -1,0 +1,78 @@
+{
+    "0": [
+        {
+            "matching_section": "<Title>:is,am,are + ing",
+            "narration_statement": "Have you ever wondered how we talk about actions happening right now? Let us discover a fun way to do just that!",
+            "run_time": 7.3
+        }
+    ],
+    "1": [
+        {
+            "matching_section": "The scene opens with a dark green-black background (#0f1715). A large rectangular chalkboard assembly\u2014consisting of a dark green slate (#162b20), thick wooden frame (#5D4037), wooden chalk tray, and two rope supports\u2014enters from above with a heavy, elastic drop animation using an ease-out-bounce rate function. The board settles into the center of the frame. Immediately after settling, the right supporting rope snaps with an irregular, frayed animation created by a jagged VMobject, then is quickly uncreated. The board begins to swing like a damped pendulum around the remaining left support point, with the oscillation gradually slowing over time. Small props on the chalk tray (a duster and chalk stick) respond subtly to the board's tilt. The camera performs gentle breathing motion (subtle zoom in and out) and tracks the board's center position to maintain framing. All text and image elements are initially set to opacity 0 and will be revealed in subsequent sections. The physics updater for swing motion, the camera breathing updater, and the chalk-slide inertia updater are activated and will run continuously throughout the scene.",
+            "narration_statement": "Let us get ready to learn something exciting.",
+            "run_time": 2.98
+        },
+        {
+            "matching_section": "The title \"Actions Happening Now!\" appears at the top-center of the board using a LaggedStart animation that fades in each character sequentially while the board continues swinging. Below this, the core explanation text \"We add '-ing' to action words to show that the action is taking place while we are talking about it.\" is revealed character by character with a similar LaggedStart animation. Both text elements use chalk-style font rendering in bright green (#61D262) and exhibit micro-movements that simulate chalk vibration. The text is automatically wrapped to fit within the board's boundaries and positioned hierarchically beneath the title with appropriate spacing.",
+            "narration_statement": "We add ing to action words to show something is happening right at this moment. This helps us describe what is going on as we speak.",
+            "run_time": 10.54
+        },
+        {
+            "matching_section": "Three action words\u2014'cry', 'dance', 'fly'\u2014are displayed on the board. Each word transforms by adding the '-ing' suffix to become 'crying', 'dancing', 'flying' respectively. The '-ing' suffix fades in as a separate visual element for each transformation, and a small context-appropriate animation appears next to each word (tears for 'crying', movement lines for 'dancing', wings for 'flying'). These transformations occur sequentially while the board continues its damped swing motion. All elements remain within the board's writing area and use the chalk-style text presentation.",
+            "narration_statement": "See how cry becomes crying and dance changes to dancing. We also say flying when someone is in the air.",
+            "run_time": 8.71
+        },
+        {
+            "matching_section": "Three example sentences with accompanying picture references are revealed as distinct visual elements arranged across the board's surface. First, a picture of a baby crying appears alongside the text \"Baby is crying.\" where the word \"crying\" is highlighted in a secondary accent color (#EF9515). Next, a picture of a child dancing appears with the text \"I am dancing.\" where \"dancing\" is highlighted. Finally, a picture of birds flying appears with the text \"The birds are flying.\" where \"flying\" is highlighted. Each example is arranged in a grid layout with images positioned above or beside the text. The examples appear sequentially using LaggedStart animations for text characters and GrowFromCenter for images, with a brief wiggle animation applied to each text element after its image appears. All images are scaled confidently to ensure visibility and do not overlap with other elements.",
+            "narration_statement": "A baby is crying right now. You might say, I am dancing when you move your feet. Look, the birds are flying high in the sky.",
+            "run_time": 9.96
+        },
+        {
+            "matching_section": "Silence",
+            "narration_statement": "silence",
+            "run_time": 3.0
+        },
+        {
+            "matching_section": "After the comprehension pause, all updaters are removed from the system. The remaining left rope snaps with an irregular, frayed animation similar to the initial rope break. The rope is uncreated, and all example images shrink to center while their accompanying text fades out with a downward shift. The entire chalkboard assembly then falls downward and rotates clockwise while moving out of the frame below, using an ease-in-cubic rate function. This dramatic exit signals the completion of the instructional moment and provides a clear visual closure to the scene.",
+            "narration_statement": "Now, let us explore more about these words.",
+            "run_time": 3.34
+        }
+    ],
+    "2": [
+        {
+            "matching_section": "The scene opens with a light pastel background (#E0F7FA) already in place. A static header bar in teal (#00ACC1) is positioned at the top edge of the frame without animation, serving as a persistent UI anchor. Below it, a procedurally generated footer of colored punch-hole circles (resembling notebook binding) is added to the bottom edge, also without animation. These UI elements remain visible throughout the entire scene. The lesson title \"Who is doing what?\" appears as a series of colorful, rounded toy blocks falling from above the frame. Each block contains a single letter and is colored using a rotating palette (red, orange, yellow, green, blue, purple, pink). The blocks are positioned off-screen at the top and animate downward using an ease_out_bounce easing function, staggered by 0.05 lag ratio to create a \"raining\" effect. As the blocks settle into their final positions in the upper-center area of the frame, they come to rest with a satisfying impact. Immediately after the blocks stabilize, a subtitle \"Using is, am, are\" appears below them through a GrowFromCenter animation with elastic easing, creating a playful \"pop\" effect. The subtitle is rendered in bold, dark gray text. After a brief pause to allow viewing, both the subtitle and all title blocks are removed from the scene: the subtitle fades out while shifting downward, and the blocks shrink to their centers simultaneously. This cleanup clears the visual space for the instructional core without leaving residual clutter.",
+            "narration_statement": "Let us figure out who is doing what in our sentences. We will learn to use special words like is, am, and are.",
+            "run_time": 9.34
+        },
+        {
+            "matching_section": "A large, rounded rectangular rule card appears with a pink border (stroke width 8) and white fill. The card is drawn using a DrawBorderThenFill animation, which traces the border first and then fills the interior. Simultaneously, a star-shaped badge labeled \"RULE\" spins into place at the upper-left corner of the card using SpinInFromNothing. The star has 12 points, yellow fill, and an orange stroke, with the text \"RULE\" in bold red overlaid at its center. Inside the rule card, the text \"We use 'am' with 'I'. We use 'is' with one person or thing (he, she, it). We use 'are' with many people or things (we, you, they).\" appears through a Write animation. The text is formatted using MarkupText to allow selective color highlighting: the terms 'I', 'am', 'one person or thing', 'is', 'many people or things', and 'are' are rendered in a distinct color (magenta/pink) and bold weight to draw attention to the critical pattern without fragmenting the sentence. The rule text is centered within the card, wrapped to prevent overflow. After the text fully appears, an Indicate animation subtly flashes and scales the rule card (scale factor 1.05) to reinforce its importance as a key takeaway. The entire rule construct\u2014card, badge, and text\u2014remains visible for sufficient viewing time, then fades out cleanly.",
+            "narration_statement": "Remember, we use am only with I. For one person or thing, like he or she, we use is. When there are many people or things, we use are.",
+            "run_time": 12.74
+        },
+        {
+            "matching_section": "A new section header appears with the text \"Examples\" in white, bold lettering, positioned inside a rounded orange background rectangle. This header is animated using GrowFromCenter with elastic easing to signal the transition from rule explanation to example presentation. Below the header, a series of illustrated example cards appears in two sequential batches to prevent cognitive overload. Each card is a rounded rectangle with a white background, black border, and decorative tape strip in a random pastel color rotated at a slight angle across the top. Within each card, an illustration occupies the upper portion (scaled to 45% of card height), followed by a word label below it rendered using MarkupText. The word labels are constructed to highlight the target auxiliary verb and subject pattern: the first batch includes \"I am reading.\" (with 'I am' highlighted in magenta), \"She is eating.\" (with 'is' highlighted in magenta), and \"They are playing.\" (with 'are' highlighted in magenta). Each card in the first batch grows into view using GrowFromCenter with a 0.2 lag ratio, creating a staggered entrance. Once all three cards in the first batch are visible, a Wiggle animation is applied to the text labels (scale value 1.2) to emphasize the highlighted terms. The cards then fade out to the left. The second batch follows the same pattern: \"Baby is crying.\" and \"The birds are flying.\" appear with the same growth, wiggle, and exit animations. After the second batch exits, the \"Examples\" header also fades out.",
+            "narration_statement": "See, I am reading because it is about me. She is eating because it is one person. They are playing shows many people. The baby is crying, and the birds are flying.",
+            "run_time": 14.42
+        },
+        {
+            "matching_section": "A new heading \"Think about it...\" appears in bold text to signal the transition into interactive practice mode. Below this, a row of quiz cards is displayed. Each quiz card has the same visual structure as the example cards: a rounded white rectangle with a black border, an illustration in the upper portion, and a question mark in the lower portion where the word label should be. The question marks are rendered in gray text (font size 48) and serve as visual placeholders inviting prediction. The four quiz cards are arranged horizontally with consistent spacing and positioned in the center-lower area of the frame. All quiz cards fade in simultaneously from above using FadeIn with an upward shift. The learner is prompted to mentally predict the missing auxiliary verb for each illustrated scenario (e.g., a boy running, a girl singing, children jumping, a cat sleeping).",
+            "narration_statement": "Now, let us think about these pictures together. Can you guess which word fits best for each action?",
+            "run_time": 6.64
+        },
+        {
+            "matching_section": "Silence",
+            "narration_statement": "silence",
+            "run_time": 3.0
+        },
+        {
+            "matching_section": "The answer reveal sequence begins. For each quiz card, the question mark morphs into the correct word label using a Transform animation. Simultaneously, a Flash animation in yellow draws attention to the card. The word labels are rendered using MarkupText with the auxiliary verb ('is', 'are', or 'am') highlighted in magenta to reinforce the subject-verb agreement pattern. The reveals are staggered using LaggedStart with a 0.5 lag ratio, so each card's answer appears sequentially rather than all at once. This pacing allows the learner to process each correct answer before the next one appears. After all answers are revealed and have been visible for sufficient time, the quiz cards, answers, and heading fade out. The scene then transitions into the celebration sequence.",
+            "narration_statement": "A boy is running, and a girl is singing. The children are jumping, and the cat is sleeping soundly.",
+            "run_time": 6.12
+        },
+        {
+            "matching_section": "A full-screen celebratory animation begins with a sunburst effect created by rotating yellow annular sectors arranged in a circle around the center. Simultaneously, a large 12-pointed yellow star with an orange stroke grows into view from the center using GrowFromCenter with elastic easing. Bold congratulatory text \"Good Job!\" appears in red with a white outline stroke, positioned at the center of the frame, also growing in using GrowFromCenter. A secondary line of text \"Keep Practicing!\" in dark gray appears below the star. The sunburst rays rotate continuously at a linear rate while the confetti effect activates: 50 small squares in random bright colors (red, blue, green, yellow, pink, orange) initially positioned at the center explode outward in random directions and angles using a LaggedStart animation with zero lag ratio for simultaneous dispersal. The rays continue rotating through the celebration to maintain visual momentum. The entire celebration sequence creates an emotionally affirming moment of success. After the confetti has dispersed and the celebration has lingered long enough to generate satisfaction without overstimulation, all celebratory elements fade out, concluding the scene.",
+            "narration_statement": "Wonderful job, little learners! You are doing great with these action words. Keep practicing, and you will be a superstar!",
+            "run_time": 8.09
+        }
+    ]
+}

@@ -1,0 +1,196 @@
+# 1. Primary Application Scenario
+
+This scene template is designed for moments where a single, foundational idea must be introduced with emphasis and memorability. It is best suited for unveiling a **core rule, law, definition, identity, or canonical statement** that learners are expected to remember, reuse, and treat as authoritative.
+
+The strength of this template lies in staging the idea as an **event**, not merely presenting text. The arrival of the board, the structural failure of one support, and the sustained swinging motion create anticipation and focus before the instructional content appears. This establishes a moment of narrative tension that naturally draws the learner’s attention to the content when it begins to emerge.
+
+The template is particularly effective when the educator wants to signal:
+
+> “This idea is foundational. Observe it carefully.”
+
+It works especially well for introducing:
+
+* Foundational formulas
+* Scientific laws
+* Theorem statements
+* Core definitions
+* Standard mathematical identities
+* Key classification rules
+* Principle-based conceptual anchors
+
+The design deliberately avoids overwhelming the viewer with procedural complexity. Instead, it establishes a **single authoritative statement** that will structure future reasoning.
+
+Because the board continues to swing while the content appears, the reveal feels dynamic and alive. The motion introduces subtle cognitive tension that increases attentional engagement without distracting from the material.
+
+This template is **not suited** for:
+
+* Multi-step problem solving
+* Long derivations
+* Procedural walkthroughs
+* Comparative tables or datasets
+* Dense symbolic manipulations
+
+Its purpose is to **anchor a central idea**, not expand it.
+
+At its core, this framework is designed for **conceptual introduction moments** — when one important idea must stand out clearly and become memorable.
+
+---
+
+# 2. Visual Construction and Animation Progression
+
+The scene begins in a dim, classroom-like environment with a dark background that suggests physical space rather than a presentation slide. The camera framing establishes a grounded environment in which objects behave according to physical forces.
+
+A large rectangular chalkboard assembly enters the scene from above the frame. The motion is heavy and slightly elastic, using a bounce-like easing that implies real mass and inertia. The viewer immediately perceives the board as a physical object rather than a flat graphic.
+
+Once the board settles into view, the structural tension in the scene resolves abruptly: one of the supporting ropes snaps. The break appears irregular and instantaneous, visually resembling a frayed rope rather than a clean detachment. This moment shifts the animation from a controlled entrance into a **physics-driven state**.
+
+With only one rope remaining, the board begins to swing like a damped pendulum around the surviving support point. The oscillation gradually decreases in amplitude, mimicking real-world energy loss due to damping. The swinging motion continues throughout most of the scene and forms the primary background dynamic.
+
+While the board swings, multiple subtle environmental behaviors reinforce the illusion of physical realism:
+
+* The **camera slowly breathes**, performing a subtle sinusoidal zoom while tracking the moving board.
+* Text elements exhibit slight micro-movement to simulate chalk vibration or projector instability.
+* Small props on the tray react to tilt and inertia, shifting slightly when the board rotates.
+
+These details ensure the environment feels **reactive and alive**, rather than mechanically animated.
+
+Once this dynamic state has stabilized, the instructional content begins to appear gradually. The reveal occurs in multiple stages:
+
+1. The title appears first, establishing the conceptual focus.
+2. Supporting explanatory text fades in next.
+3. A short explanatory paragraph appears alongside a concealed visual reference image.
+4. The mathematical expression unfolds piece by piece.
+5. The final expression is framed and briefly emphasized.
+
+Each reveal occurs while the board continues swinging, maintaining visual continuity between the environment and the instructional material.
+
+Near the end of the sequence, the remaining rope snaps as well. The board loses its final support and falls downward out of frame while rotating slightly. This exit creates a natural conclusion to the scene, as though the physical system has fully collapsed after delivering its message.
+
+---
+
+# 3. Modular Visual Assets and Their Role in the Scene
+
+The animation is built from several modular visual subsystems that interact through a shared motion hierarchy.
+
+This modular structure allows the scene to remain expressive while still being reusable across different instructional topics.
+
+---
+
+## The Chalkboard Assembly
+
+The chalkboard assembly serves as the primary instructional canvas.
+
+It is composed of:
+
+* The writing slate
+* A wooden frame
+* A chalk tray
+* Two rope supports
+* Decorative classroom props
+
+Most of these elements are grouped together as a **single rigid body system** so that they move together when the board swings.
+
+This grouping ensures that all content attached to the board inherits the same physical motion, reinforcing the illusion that the board is a single suspended object.
+
+One of the ropes is designed to detach early in the animation. The remaining rope becomes the pivot point for the pendulum motion.
+
+---
+
+## Physics Motion System
+
+The board’s motion is governed by a damped pendulum model.
+
+The rotation angle follows a damped harmonic function in which the amplitude gradually decays over time. This produces a realistic oscillation that slowly stabilizes.
+
+The entire chalkboard assembly rotates around a fixed pivot corresponding to the remaining rope’s ceiling attachment point.
+
+Because the motion is handled through continuous updates rather than pre-baked keyframes, the board remains responsive throughout the entire scene.
+
+---
+
+## Camera Breathing and Tracking
+
+The camera does not remain fixed.
+
+Instead, it performs two continuous behaviors:
+
+**Subtle breathing motion**
+
+The camera height oscillates slightly using a sine wave, creating a gentle zoom in and out. This keeps the frame from feeling static.
+
+**Dynamic tracking**
+
+The camera slowly follows the center of the swinging board using smooth interpolation. This prevents the board from drifting too far toward the edges of the frame.
+
+Together, these behaviors create a more cinematic viewing experience and help maintain visual focus on the board.
+
+---
+
+## Text System and Chalk Flicker
+
+Text content is styled to resemble chalk writing on a classroom board.
+
+Because the font does not automatically wrap within Manim, a custom text wrapping system is used to ensure lines remain within the visual boundaries of the board.
+
+During the animation, text elements experience extremely small horizontal shifts. This subtle motion simulates chalk vibration or projection instability and prevents the text from appearing unnaturally rigid while the board moves.
+
+---
+
+## Chalk Dust Particle Effect
+
+When the equation structure appears, a short particle effect simulates chalk dust.
+
+Small fading dots briefly expand outward from the writing location and drift upward before disappearing.
+
+This effect reinforces the visual metaphor that the equation is being written or revealed on the board rather than simply fading into existence.
+
+The particle burst is intentionally brief so that it enhances the reveal without distracting from the mathematical content.
+
+---
+
+## Classroom Props and Secondary Motion
+
+Small objects resting on the chalk tray introduce subtle environmental realism.
+
+These include:
+
+* A chalk stick
+* A board duster
+
+Because the board tilts during swinging, these objects shift slightly in response to the changing angle. The movement is minimal but adds to the sense that the board behaves like a physical object rather than a static illustration.
+
+---
+
+## Embedded Image Panel
+
+The scene includes an optional visual reference panel placed beside the explanatory paragraph.
+
+This panel consists of:
+
+* A square sheet of paper
+* An embedded image printed on the paper
+* A chalkboard-colored cover that initially hides the image
+
+At the appropriate moment in the animation, the cover fades away to reveal the image beneath.
+
+This mechanism allows diagrams, illustrations, or visual examples to appear naturally within the chalkboard environment, as though pinned or taped onto the board.
+
+The slight rotation of the paper adds to the informal classroom aesthetic and prevents the image from feeling digitally perfect.
+
+---
+
+## Final Structural Collapse
+
+After the instructional content has fully appeared, the animation transitions into its final phase.
+
+The remaining rope snaps, represented by a jagged transformation followed by rapid disappearance. With no supports left, the chalkboard assembly detaches from the ceiling.
+
+The board then falls downward while rotating slightly, exiting the frame entirely.
+
+This ending serves several purposes:
+
+* It provides a **clear narrative closure**.
+* It prevents the animation from ending in a static state.
+* It reinforces the physical metaphor introduced at the start of the scene.
+
+The collapse signals that the visual event has concluded and prepares the viewer for a transition to the next segment.

@@ -1,0 +1,78 @@
+{
+    "0": [
+        {
+            "matching_section": "<Title>:Estimating the Difference",
+            "narration_statement": "Let us discover how to find close answers quickly in math!",
+            "run_time": 5.14
+        }
+    ],
+    "1": [
+        {
+            "matching_section": "The scene initializes with a dark neutral background. The title \"Estimating the Difference\" appears near the top of the screen, centered horizontally, using a FadeIn animation with a slight upward motion. Below the title, a faint vertical guide line appears at the horizontal center of the frame, dividing the screen into left and right functional regions. A large rectangular mask matching the background color is placed over the left half of the screen, positioned above animated panels but below the title, to hide instructional content as it slides out of view. The right panel is initialized with the heading \"What is Estimation?\" appearing via FadeIn, positioned in the upper-right area. Below this heading, explanatory text appears via Write animation: \"When we don't need an exact answer, we can find a close one quickly! This is called Estimation.\" followed by \"Remember: The rule for rounding numbers to estimate is the same as when we add them.\" Both lines of text are sized confidently and positioned to occupy meaningful visual space in the right panel without crowding.",
+            "narration_statement": "Sometimes we need a quick, close answer instead of an exact one; this is called estimation! Our rounding rules help us do this, just like in addition.",
+            "run_time": 12.89
+        },
+        {
+            "matching_section": "The explanatory text in the right panel fades out simultaneously to clear the space for the problem-solving framework. The left panel then establishes the problem context for Example 1 with the heading \"Estimate to Nearest Tens\" fading in, positioned in the upper-left area. Below this heading, the original numbers \"69\" and \"51\" appear via FadeIn, arranged vertically with clear spacing. Simultaneously, the right panel initializes the solution framework with the heading \"Estimated vs. Actual Difference\" fading in at the top of the right panel. Below this heading, column headers \"T O\" (Tens and Ones) appear on both sides of the central vertical guide line, with structural lines and spaces prepared for columnar subtraction layout. The screen now displays the problem context on the left and the initial solution setup on the right, with both panels properly anchored and scaled.",
+            "narration_statement": "Let us try an example together and estimate the difference to the nearest tens.",
+            "run_time": 5.57
+        },
+        {
+            "matching_section": "A reasoning panel appears in the lower-right area of the screen via Write animation, stating \"Round 69 to the nearest tens.\" As this panel appears, the number \"69\" in the left panel is highlighted with a surrounding rectangle and undergoes a brief pulse animation. The number \"69\" then transforms via ReplacementTransform to \"70\", and an explanatory line \"9 is 5 or more, so round up to 70.\" appears below the transformed number in the left panel. The reasoning panel then slides leftward and disappears behind the stationary left mask.",
+            "narration_statement": "First, we round the number sixty-nine to the nearest tens. Since nine is five or more, we round it up to seventy.",
+            "run_time": 10.24
+        },
+        {
+            "matching_section": "A second reasoning panel appears in the lower-right area via Write animation, stating \"Round 51 to the nearest tens.\" As this panel appears, the number \"51\" in the left panel is highlighted with a surrounding rectangle and undergoes a brief pulse animation. The number \"51\" then transforms via ReplacementTransform to \"50\", and an explanatory line \"1 is less than 5, so round down to 50.\" appears below the transformed number in the left panel. This reasoning panel then slides leftward and disappears behind the left mask.",
+            "narration_statement": "Next, we round fifty-one to the nearest tens. One is less than five, so we round it down to fifty.",
+            "run_time": 8.86
+        },
+        {
+            "matching_section": "A third reasoning panel appears in the lower-right area via Write animation, instructing \"Subtract the rounded numbers.\" On the left panel, the rounded numbers \"70\" and \"50\" are positioned in columnar format with the subtraction operator appearing below them, followed by a horizontal line. The result \"20\" then appears below the line via FadeIn. This reasoning panel slides leftward and exits behind the mask.",
+            "narration_statement": "Now we subtract our rounded numbers, seventy minus fifty. Our estimated difference is twenty!",
+            "run_time": 8.79
+        },
+        {
+            "matching_section": "A final reasoning panel appears in the lower-right area via Write animation, stating \"Now, let's find the actual difference.\" On the right panel, the original numbers \"69\" and \"51\" are positioned in columnar format with the subtraction operator appearing below them, followed by a horizontal line. The result \"18\" then appears below the line via FadeIn. This panel slides leftward and exits. The numbers \"20\" (estimated difference on the left) and \"18\" (actual difference on the right) are then highlighted with surrounding rectangles and undergo brief pulse animations to emphasize the final results. All contextual elements on the left panel, including the original numbers and the \"Estimate to Nearest Tens\" heading, slide off-screen to the left via a coordinated shift animation. Simultaneously, all solution framework elements on the right panel, including the column headers and structural lines, slide off-screen to the right via a coordinated shift animation. Only the highlighted \"20\" and \"18\" remain visible and move to a central, prominent location below the title, positioned side-by-side with clear visual balance.",
+            "narration_statement": "So, we subtract sixty-nine and fifty-one to find the actual difference. It is eighteen.",
+            "run_time": 7.4
+        },
+        {
+            "matching_section": "A concluding sentence appears below the centered results via a Write animation, stating \"The estimated difference (20) is close to the actual difference (18).\" Key numerical values \"20\" and \"18\" within this sentence are highlighted to match the result display above, reinforcing the connection between the estimated and actual differences. After a brief pause, all remaining elements fade out simultaneously: the title, the centered results \"20\" and \"18\", their surrounding highlight boxes, and the concluding sentence. The screen returns to the empty dark neutral background, marking the completion of the scene.",
+            "narration_statement": "Look how close our estimated difference, twenty, is to the actual difference, eighteen! Estimation really helps us get close.",
+            "run_time": 10.24
+        }
+    ],
+    "2": [
+        {
+            "matching_section": "The scene opens with the title \"Estimating the Difference\" appearing at the top-center of the screen via FadeIn animation with upward motion. The background is set to a dark neutral color for high contrast. A faint vertical guide line is created at the horizontal center of the frame, establishing the split-screen division between left and right functional regions. A rectangular mask matching the background color is positioned over the left half of the screen, extending from the vertical center line to the left edge; this mask sits above animated content but below the title and remains stationary throughout the scene to hide panels as they slide leftward. The right panel heading \"Estimated vs. Actual Difference\" fades in below the title in the upper-right area. Column headers \"H T O\" appear on both sides of the vertical center line, with structural lines drawn to establish the columnar subtraction layout framework. Simultaneously, the left panel heading \"Estimate to Nearest Hundreds\" fades in, and the original numbers \"232\" and \"783\" appear below this heading in the left region. All environmental setup is now complete, with both panels initialized and ready for step-by-step reasoning.",
+            "narration_statement": "Now, let us try estimating differences to the nearest hundreds. We will use the same clever rounding rules!",
+            "run_time": 8.4
+        },
+        {
+            "matching_section": "A reasoning panel appears in the lower-right area stating \"First, let's round 783 to the nearest hundreds.\" via Write animation. As this panel appears, the number \"783\" in the right panel undergoes a brief pulse animation using Indicate, drawing attention to the value being rounded. The number \"783\" then transforms via ReplacementTransform to \"800\", and the left panel adds explanatory text below stating \"8 is 5 or more, so round up to 800.\" to reinforce the rounding rule. The reasoning panel then slides leftward and exits behind the left mask via a leftward shift animation, clearing the instructional workspace for the next step.",
+            "narration_statement": "First, let us round seven hundred eighty-three to the nearest hundreds. Since eight is five or more, we round it up to eight hundred.",
+            "run_time": 9.92
+        },
+        {
+            "matching_section": "A second reasoning panel appears in the lower-right area stating \"Now, round 232 to the nearest hundreds.\" via Write animation. As this panel appears, the number \"232\" in the left panel undergoes a brief pulse animation to highlight it. The number \"232\" then transforms via ReplacementTransform to \"200\", and the left panel adds explanatory text below stating \"3 is less than 5, so round down to 200.\" The reasoning panel slides leftward and exits behind the left mask, preparing the scene for the subtraction step.",
+            "narration_statement": "Next, we round two hundred thirty-two to the nearest hundreds. Three is less than five, so we round it down to two hundred.",
+            "run_time": 9.96
+        },
+        {
+            "matching_section": "A reasoning panel appears in the lower-right area stating \"Subtract the rounded numbers.\" via Write animation. On the left panel, the rounded numbers \"800\" and \"200\" are positioned vertically, a horizontal subtraction line appears below them via Create animation, and the result \"600\" appears below the line via FadeIn animation. The reasoning panel slides leftward and exits behind the left mask, clearing the space for the final step.",
+            "narration_statement": "Now, let us subtract our rounded numbers, eight hundred minus two hundred. Our estimated difference is six hundred!",
+            "run_time": 9.68
+        },
+        {
+            "matching_section": "A reasoning panel appears in the lower-right area stating \"Now, let's find the actual difference.\" via Write animation. On the right panel, the original numbers \"783\" and \"232\" are positioned vertically, a horizontal subtraction line appears below them via Create animation, and the result \"551\" appears below the line via FadeIn animation. The reasoning panel slides leftward and exits behind the left mask. The numbers \"600\" (estimated) and \"551\" (actual) are then highlighted with surrounding rectangles via Create animation and briefly pulse via Indicate animation to emphasize their importance.",
+            "narration_statement": "Let us also find the actual difference by subtracting seven hundred eighty-three and two hundred thirty-two. The actual answer is five hundred fifty-one.",
+            "run_time": 10.48
+        },
+        {
+            "matching_section": "All contextual elements on the left panel, including the \"Estimate to Nearest Hundreds\" heading and the original numbers, slide off-screen to the left via a leftward shift animation. Simultaneously, all solution framework elements on the right panel, including the \"Estimated vs. Actual Difference\" heading, column headers, structural lines, and the original numbers \"783\" and \"232\", slide off-screen to the right via a rightward shift animation. The highlighted result numbers \"600\" (estimated) and \"551\" (actual) move to a central, prominent location below the title via an animate.move_to() transformation. A concluding sentence \"Again, the estimated difference (600) is close to the actual difference (551).\" appears below the centered results via Write animation, with the numbers \"600\" and \"551\" highlighted to match the result display above. After a brief pause, all remaining elements\u2014the title, centered results, highlight boxes, and concluding sentence\u2014fade out simultaneously via FadeOut animation, returning the screen to the empty background and providing a clear instructional closure.",
+            "narration_statement": "See how our estimated difference, six hundred, is very close to the actual five hundred fifty-one? Estimation is a super useful math skill!",
+            "run_time": 12.03
+        }
+    ]
+}

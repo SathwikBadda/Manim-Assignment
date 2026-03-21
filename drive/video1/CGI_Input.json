@@ -1,0 +1,73 @@
+{
+    "0": [
+        {
+            "matching_section": "<Title>:Articles: a, an",
+            "narration_statement": "Let us discover little words that are used with nouns.",
+            "run_time": 3.89
+        }
+    ],
+    "1": [
+        {
+            "matching_section": "The scene begins with a light pastel background (#E0F7FA) establishing a calm, child-friendly atmosphere. A static header bar in teal (#00ACC1) is positioned at the top of the frame without animation, serving as a persistent visual anchor. A procedurally generated footer of colorful punch-hole circles (red, orange, yellow, green, blue, purple) is positioned at the bottom, evoking a notebook binding and remaining visible throughout the entire scene. These UI elements are added directly via self.add() to establish a stable interface layer before instructional content begins. The main title \"English Alphabet\" appears as a series of colorful, rounded toy blocks that fall from above the frame in a staggered sequence. Each block is rendered as a RoundedRectangle with a bold letter inside, colored with a rotating palette (red, orange, yellow, green, blue, purple, pink). The blocks use ease_out_bounce easing to simulate gravity and elastic impact, creating rhythm and anticipation as they settle into centered positions. Once all blocks have stabilized, a subtitle \"Vowels and Consonants\" appears directly beneath them using GrowFromCenter with elastic easing, providing conceptual precision after the playful introduction. After a brief pause to allow registration, both the title blocks and subtitle shrink toward their centers and fade out simultaneously, clearing the canvas for core instructional content while maintaining visual continuity through the persistent header and footer.",
+            "narration_statement": "We will begin with the English alphabet.",
+            "run_time": 2.78
+        },
+        {
+            "matching_section": "A large, rounded rectangular rule card appears through a DrawBorderThenFill animation, with a thick border stroke (#E91E63 pink) and white fill. The card is positioned in the upper-center region of the frame. A star-shaped badge labeled \"RULE\" (rendered as a 12-pointed star in yellow with orange stroke, containing bold red text) spins into place at the top-right corner of the card via SpinInFromNothing, visually marking the content as authoritative and important. The rule content is presented as multi-line text using MarkupText to enable selective color emphasis. The text reads: \"The English alphabet has 26 letters.\" on the first line, followed by \"5 are Vowels: A, E, I, O, U.\" with the vowel letters emphasized in bold magenta/pink (#E91E63), and \"21 are Consonants: the rest!\" on the third line. Each line is written sequentially using Write animation, allowing the learner to process information progressively. The vowel letters pulse briefly and recolor to vibrant magenta as they appear, drawing attention to the pattern. An Indicate animation briefly highlights the entire rule card by scaling it slightly and flashing it in pink, reinforcing importance without introducing new elements. The rule card, badge, and all text remain on screen for sufficient viewing time.",
+            "narration_statement": "The English alphabet has twenty-six letters, with five vowels like A, E, I, O, U. All the other letters in the alphabet are consonants.",
+            "run_time": 12.75
+        },
+        {
+            "matching_section": "The rule card content is expanded to introduce articles. New text is written below the consonants statement: \"'a' and 'an' are called Articles.\" appears first, followed immediately by \"They are used before ONE noun.\" The word \"ONE\" is rendered in a larger font size and briefly enlarged through a Scale animation to emphasize the singular concept. A small, single apple icon (rendered as a simple red circle or sourced from assets) appears next to the word \"noun,\" reinforcing the singular concept visually. The apple icon grows into place using GrowFromCenter. All text additions use Write animation to maintain consistency with the earlier rule presentation. The entire rule card, star badge, and all text remain visible and stable, allowing the learner to absorb the complete definition of articles and their function.",
+            "narration_statement": "Now we learn about a and an, which are called articles. We use them when we talk about just one thing, like one apple.",
+            "run_time": 9.34
+        },
+        {
+            "matching_section": "After sufficient viewing time, the entire rule construct\u2014including the rounded rectangle card, star badge, and all text content\u2014fades out together using a coordinated FadeOut animation. The fade occurs smoothly without any shift or rotation, ensuring a clean visual transition. The header bar and footer remain visible, maintaining the stable interface layer. The scene is now cleared and prepared for subsequent instructional content, with the foundational concepts of vowels, consonants, and articles firmly established. The exit animation signals pedagogical closure while preserving visual continuity through the persistent UI anchors.",
+            "narration_statement": "We have learned what vowels and consonants are. Now, let us explore how to use a and an correctly.",
+            "run_time": 8.07
+        }
+    ],
+    "2": [
+        {
+            "matching_section": "The scene opens on a dark neutral background filling the entire frame. A rectangular header panel appears at the center of the screen, scaling outward from a small point using a center-growth animation. Once the panel reaches full size, the title \"Articles: a, an\" fades into view with a slight downward drift into its final resting position. The subtitle \"When to use 'a' and 'an'?\" appears beneath the title in a smaller, lighter font weight. After the header content is fully visible, the entire header structure smoothly transitions upward and locks into position at the top of the frame, creating a stable anchor for the remainder of the scene. The background remains dark and neutral throughout this opening sequence, providing strong contrast for all subsequent text and visual elements.",
+            "narration_statement": "Let us learn when to use a and an.",
+            "run_time": 3.62
+        },
+        {
+            "matching_section": "Directly below the header, a wide rectangular concept panel begins to expand horizontally from a collapsed state at its left edge, growing outward until it fills most of the horizontal width of the frame. This expansion creates the visual impression of the concept panel unfolding beneath the header. Inside this panel, the section title \"The Sound Rule!\" appears first, centered horizontally. After the title is visible, descriptive text is introduced letter-by-letter: \"We use 'a' before words that begin with a consonant sound.\" with the phrase \"consonant sound\" highlighted in a distinct color to emphasize the key term. Immediately following, the text \"We use 'an' before words that begin with a vowel sound.\" appears with \"vowel sound\" highlighted in the same distinct color. This gradual reveal encourages the viewer to read the explanation progressively. After a brief pause for comprehension, the concept panel fades away and collapses back toward its origin point, clearing the stage for the visual examples that follow.",
+            "narration_statement": "We use a before words that begin with a consonant sound. We use an before words that begin with a vowel sound.",
+            "run_time": 8.26
+        },
+        {
+            "matching_section": "Once the concept panel disappears, the animation prepares the screen for a four-example layout by conceptually dividing the available space into four quadrants: top-left, top-right, bottom-left, and bottom-right. Each quadrant will contain a separate demonstration of the article rule applied to a specific object. The camera remains at its full frame view during this transition, establishing the spatial framework before zooming into individual examples. No examples appear yet; this section serves purely as a spatial and compositional setup.",
+            "narration_statement": "Let us look at some examples.",
+            "run_time": 4.61
+        },
+        {
+            "matching_section": "For the first example (doll, positioned in the top-left quadrant), a large illustrative picture of a doll scales gently into view using a center-growth animation, giving the impression that it is emerging from the scene. The object remains centered within its quadrant. Immediately afterward, the camera zooms slightly toward the doll image, establishing visual focus on this first example. A short text phrase \"a doll\" appears beneath the image. This phrase then transforms into a full explanatory sentence using a replacement animation: \"Doll starts with a 'd' sound. 'd' is a consonant. So we say: a doll.\" The initial letter sound 'd' and the article phrase 'a doll' are highlighted in a distinct color to draw attention to the rule application and the connection between the sound and the correct article. Once the explanation is clear, the camera smoothly returns to its original zoom level, revealing all previously shown examples which remain visible on screen. The doll example and its explanation persist as the foundation for the next example.",
+            "narration_statement": "This is a doll, and the word doll begins with a d consonant sound. Because of this, we correctly say a doll for just one.",
+            "run_time": 8.08
+        },
+        {
+            "matching_section": "For the second example (cup, positioned in the top-right quadrant), a large illustrative picture of a cup scales gently into view in its respective quadrant. The camera zooms slightly toward the cup image to establish focus on this second example. A short text phrase \"a cup\" appears beneath the image. This phrase transforms into a full explanatory sentence: \"Cup starts with a 'c' sound. 'c' is a consonant. So we say: a cup.\" The initial letter sound 'c' and the article phrase 'a cup' are highlighted in the distinct color to reinforce the rule. Once the explanation is complete, the camera returns to its original zoom level, revealing both the doll and cup examples which remain visible. The structure accumulates progressively, with both previous examples remaining on screen.",
+            "narration_statement": "This is a cup, and the word cup begins with a c consonant sound. Because of this, we correctly say a cup for just one.",
+            "run_time": 8.62
+        },
+        {
+            "matching_section": "For the third example (umbrella, positioned in the bottom-left quadrant), a large illustrative picture of an umbrella scales gently into view in its respective quadrant. The camera zooms slightly toward the umbrella image to establish focus. A short text phrase \"an umbrella\" appears beneath the image. This phrase transforms into a full explanatory sentence: \"Umbrella starts with an 'u' sound. 'u' is a vowel. So we say: an umbrella.\" The initial letter sound 'u' and the article phrase 'an umbrella' are highlighted in the distinct color to emphasize the contrast with the previous consonant examples and to show the rule application for vowel sounds. Once the explanation is clear, the camera returns to its original zoom level, revealing all three previous examples which remain visible on screen. The accumulation continues with all four quadrants now prepared for the final example.",
+            "narration_statement": "This is an umbrella, and the word umbrella begins with an uh vowel sound. Because of this, we correctly say an umbrella for just one.",
+            "run_time": 11.24
+        },
+        {
+            "matching_section": "For the fourth example (orange, positioned in the bottom-right quadrant), a large illustrative picture of an orange scales gently into view in its respective quadrant. The camera zooms slightly toward the orange image to establish focus on this final example. A short text phrase \"an orange\" appears beneath the image. This phrase transforms into a full explanatory sentence: \"Orange starts with an 'o' sound. 'o' is a vowel. So we say: an orange.\" The initial letter sound 'o' and the article phrase 'an orange' are highlighted in the distinct color to reinforce the vowel rule. Once the explanation is complete, the camera returns to its original zoom level, revealing all four examples arranged in their quadrant positions: doll (top-left), cup (top-right), umbrella (bottom-left), and orange (bottom-right). All examples remain visible simultaneously, creating a balanced visual layout where each demonstration reinforces the same conceptual principle from a different perspective.",
+            "narration_statement": "This is an orange, and the word orange begins with an o vowel sound. Because of this, we correctly say an orange for just one.",
+            "run_time": 9.51
+        },
+        {
+            "matching_section": "After a brief pause, the animation begins collapsing the structure in a reverse exit sequence. All four transformation examples shrink and move toward the header region at the top of the frame in a staggered animation sequence, causing the examples to collapse one after another rather than simultaneously. Each example reduces in size, fades slightly in opacity, and travels toward the header panel. Once all examples reach the header area, they disappear completely. A brief highlight flash then appears around the header panel, acting as a visual signal that the concept explanation is complete. Finally, the header moves upward and exits the frame, returning the scene to the empty dark neutral background. The scene concludes with a clean, uncluttered frame, signaling the end of the article rule explanation.",
+            "narration_statement": "We have explored when to use a and an with many examples. Now you know the sound rule for articles.",
+            "run_time": 7.66
+        }
+    ]
+}

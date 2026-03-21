@@ -1,0 +1,194 @@
+# 1. Primary Application Scenario
+
+This scene template is designed for moments where a grammatical rule, vocabulary definition, or core linguistic concept must be introduced with emphasis and memorability. It is best suited for unveiling a **core rule, definition, grammar principle, or canonical statement** that learners are expected to remember, reuse, and treat as authoritative.
+
+The strength of this template lies in staging the idea as an **event**, not merely presenting text. The arrival of the heavy classroom chalkboard, the structural failure of one support rope, and the sustained swinging motion create anticipation and focus before the instructional content appears. This establishes a moment of narrative tension that naturally draws the learner’s attention to the grammar rules when they begin to emerge on the board.
+
+The template is particularly effective when the educator wants to signal:
+
+> "This grammar rule is foundational. Observe it carefully."
+
+It works especially well for introducing:
+
+* Grammar principles (e.g., using 'are' with plurals)
+* Core vocabulary definitions
+* Foundational language rules
+* Standard sentence structures
+* Key classification rules
+* Principle-based conceptual anchors
+
+The design deliberately avoids overwhelming the viewer with intense procedural complexity. Instead, it establishes a **single authoritative statement** (the title and rules) that will structure future sentence building, followed by clear visual examples.
+
+Because the board continues to swing while the content appears, the reveal feels dynamic and alive. The motion introduces subtle cognitive tension that increases attentional engagement without distracting from the material.
+
+This template is **not suited** for:
+
+* Multi-step math problem-solving
+* Long essay derivations
+* Procedural mathematical walkthroughs
+* Dense symbolic manipulations
+
+Its purpose is to **anchor a central idea**, not expand it infinitely.
+
+At its core, this framework is designed for **conceptual introduction moments** — when one important language idea must stand out clearly, become memorable, and immediately be backed up with visual examples.
+
+---
+
+# 2. Visual Construction and Animation Progression
+
+The scene begins in a dim, immersive classroom-like environment with a dark green/black background (#0f1715) that suggests physical space rather than a flat presentation slide. The camera framing establishes a grounded environment in which objects behave according to physical forces.
+
+A large rectangular chalkboard assembly enters the scene from directly above the frame. The motion is heavy and elastic, using a bounce-like easing (`ease_out_bounce`) that implies real mass and inertia. The viewer immediately perceives the board as a physical object.
+
+Once the board settles into view, the structural tension in the scene resolves abruptly: the right supporting rope snaps. The break appears irregular and instantaneous, visually resembling a frayed rope rather than a clean detachment. This moment shifts the animation from a controlled entrance into a **physics-driven state**.
+
+With only the left rope remaining, the board begins to swing like a damped pendulum around the ceiling's surviving left support point. The oscillation gradually decreases in amplitude, mimicking real-world energy loss due to damping. The swinging motion continues throughout most of the scene and forms the primary background dynamic.
+
+While the board swings, multiple subtle environmental behaviors reinforce the illusion of physical realism:
+
+* The **camera continuously breathes**, performing a subtle sinusoidal zoom while smoothly tracking the center of the moving board.
+* Text elements exhibit an intentional, slight micro-movement jitter (`flicker`) to simulate chalk vibration or projector instability.
+* Small props on the tray (chalk) react to the tilt and inertia, sliding physically sideways when the board rotates.
+
+These details ensure the environment feels **reactive and alive**, rather than mechanically animated.
+
+Once this dynamic state has stabilized, the instructional content begins to appear gradually. The reveal occurs in multiple stages:
+
+1. **Title Array (Section 2):** The title ("Understanding 'Are'") fades in letter-by-letter, establishing the conceptual focus.
+2. **Rule Explanation:** The supporting explanatory text ("'Are' is used with anything that is plural...") fades in character-by-character.
+3. **Bullet Points:** The specific rule items ('we', 'these', 'you', 'they', 'names') fade in sequentially.
+4. **Context Switch (Section 3):** The initial grammar rules are uncreated, clearing the board.
+5. **Visual Paragraph Transition:** A short explanatory paragraph ("The rules of 'are' apply...") appears alongside a concealed, pinned paper graphic. The chalkboard cover over the picture fades away to reveal a visual reference image (`verbs_9.png`).
+6. **Example Grid Reveal (Section 4):** The paragraph and single picture are cleared, making way for the core examples.
+7. **Dynamic Gallery Array:** Five specific sentence examples (e.g., "We are sisters", "These are cats") dynamically align themselves in a 3-column grid structure across the board. Each text string fades in, draws the viewer's eye with a `Wiggle` animation, and simultaneously reveals an accompanying image scaled underneath it.
+
+Each text line wraps dynamically into boundaries to ensure it never overflows the physical edges of the chalkboard drawing area.
+
+Each reveal occurs while the board continues swinging seamlessly in the background, maintaining visual continuity between the physical environment and the English instructional material.
+
+Near the very end of the sequence (Section 5), the physics sub-system is deactivated. The remaining left rope snaps in a frayed, jagged animation line. The board loses its final support and heavily falls downward out of frame while rotating violently by 10 degrees. The example images shrink and disappear as the board plummets. This exit creates a natural conclusion to the scene, as though the physical system has fully collapsed after delivering its message.
+
+---
+
+# 3. Modular Visual Assets and Their Role in the Scene
+
+The animation is built from several modular visual subsystems that interact through a shared motion hierarchy.
+
+This modular structure allows the scene to remain expressive while still being reusable across completely different instructional topics.
+
+---
+
+## The Chalkboard Assembly
+
+The chalkboard assembly serves as the primary instructional canvas.
+
+It is composed of:
+
+* The dark green writing slate (`#162b20`)
+* A thick wooden frame (`#5D4037`)
+* A wooden chalk tray located at the bottom
+* Two rope lines attached to the ceiling anchors
+* Decorative classroom props
+
+Most of these elements are grouped together as a **single rigid body system** (`full_assembly`) so that they move together when the board swings.
+
+This grouping ensures that all content attached to the board inherits the exact same physical motion, reinforcing the illusion that the board is a single suspended object in 3D space.
+
+The right rope is designed to detach early in the animation using a jagged random-noise math generation. The remaining left rope becomes the rigid pivot point for the pendulum motion.
+
+---
+
+## Physics Motion System
+
+The board’s motion is governed by a complex damped pendulum mathematical model via an updater function.
+
+The rotation angle follows a damped harmonic function in which the amplitude gradually decays over time based on an exponential decay combined with a cosine oscillation. This produces a highly realistic physical swing that slowly stabilizes.
+
+The entire chalkboard assembly rotates around a fixed `pivot` corresponding to the left rope’s ceiling attachment point.
+
+Because the motion is handled through `add_updater` functions rather than pre-baked keyframes, the board remains perfectly responsive throughout the entire 30+ second scene.
+
+---
+
+## Camera Breathing and Tracking
+
+The camera (`self.camera.frame`) does not remain fixed in space.
+
+Instead, it performs two continuous behaviors via its own updater:
+
+**Subtle breathing motion**
+The camera height oscillates slightly using a sine wave scaled to time, creating a gentle zoom out and in. This keeps the frame from feeling static.
+
+**Dynamic tracking**
+The camera slowly follows the center point of the swinging board system using smooth interpolation. This prevents the board from drifting too far toward the edges of the frame during wide swings.
+
+Together, these behaviors create a highly cinematic viewing experience and help maintain visual focus directly on the board contents.
+
+---
+
+## Text System and Chalk Flicker
+
+Text content uses a specialized chalk font ("Chalktastic") styled to resemble chalk writing on a classroom board.
+
+Because standard Manim text does not automatically wrap boundaries, a custom, dynamic text wrapping system (`wrap_text_dynamic`) is employed. This mathematically splits strings and tests width thresholds, breaking strings into perfectly spaced multi-line objects to ensure lines remain safely within the visual boundaries of the board width.
+
+During the animation, all text elements experience an extremely small horizontal shift (`flicker` updater). This random subtle motion (0.001 to 0.002 units) simulates chalk vibration or projection instability and prevents the text characters from appearing unnaturally rigid or "sharp" while the physical board moves.
+
+---
+
+## Dynamic Example Gallery System
+
+When the scene shifts to providing visual examples in Section 4, a dynamic gallery component is utilized.
+
+Instead of hardcoded positions for the 5 visual examples, an array of strings and image paths is fed into a visual generator.
+The text strings are dynamically wrapped, paired with scaled images, and then automatically arranged using a column/row grid system (`arrange_in_grid`).
+
+This allows the template to be instantly re-used with 2 examples, 4 examples, or 6 examples without the author having to manually adjust X/Y coordinates to prevent overlap. The entire gallery group scales itself down proportionally if it detects it might overflow the physical chalkboard dimensions.
+
+---
+
+## Classroom Props and Secondary Motion
+
+Small objects resting on the wooden chalk tray introduce subtle environmental realism.
+
+These include:
+
+* A white rectangular chalk stick
+* A two-toned board duster (`#3E2723`, `#8D6E63`)
+
+Because the board physically tilts during its pendulum swinging, the chalk stick literally reacts to gravity. A specific `chalk_slide` updater shifts the chalk stick horizontally left and right across the tray based entirely on the `current_angle` of the board swing and a predetermined slide sensitivity. The movement is tiny but adds brilliantly to the sense that the board behaves like a real physical object rather than a flat computer illustration.
+
+---
+
+## Embedded Image Panel (Paper Reference)
+
+The scene includes an optional visual reference panel placed directly below the explanatory paragraph in Section 3.
+
+This panel consists of:
+
+* A near-white square sheet of paper (`#FCFCF9`)
+* An embedded image printed on the paper
+* A dark chalkboard-colored cover that initially perfectly hides the image
+
+This mechanism allows diagrams or visual examples to appear organically within the chalkboard environment, as though formally pinned onto the board.
+
+The slight counter-clockwise rotation (`-3 * DEGREES`) of the paper group adds to the informal classroom aesthetic and prevents the image from feeling digitally perfect or rigidly aligned. The dark cover smoothly fades out to reveal the image underneath.
+
+---
+
+## Final Structural Collapse
+
+After the instructional content and dynamic galleries have fully completed their timeline, the animation transitions into its final phase.
+
+All updaters (swinging, camera breathing, text flickering, and chalk sliding) are mathematically removed to freeze the system.
+The remaining left rope snaps, represented physically by a jagged interpolation transformation followed directly by a rapid `Uncreate` disappearance. With absolutely no supports left, the chalkboard assembly completely detaches from the ceiling.
+
+The board heavily falls downward out of frame (`DOWN * 1.5`) while rotating by 10 degrees. Simultaneously, the dynamic gallery elements visually shrink and fade out of existence.
+
+This ending serves several purposes:
+
+* It provides a **highly dramatic narrative closure**.
+* It prevents the animation from ending in an awkwardly static, dead state.
+* It structurally reinforces the physical metaphor introduced at the start of the scene.
+
+The collapse definitively signals that the visual event has concluded and psychologically prepares the viewer for a hard transition to the next video segment.

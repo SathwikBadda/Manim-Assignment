@@ -1,0 +1,57 @@
+# Instructional Scenarios for the Division and Multiplication Solver Template
+
+## Scenario: Visualizing Procedural Mastery in Arithmetic
+
+This template is designed to help students master long-form arithmetic by clearly separating visual process from conceptual reasoning. In the Division section, the left panel stabilizes the mathematical "layout," while the right panel introduces each step (Step 1, Step 2, Step 3) in isolation. This allows learners to focus on single transformations without being overwhelmed by the complexity of the entire algorithm. The sequential reveal helps internalize the rhythm of long division (Divide, Multiply, Subtract, Bring Down).
+
+## Scenario: Bridging Related Mathematical Concepts
+
+By combining Division and Multiplication into a single sequential animation, the template reinforces the inverse relationship between these operations. The learner sees a clear transition where one problem is solved and verified, followed immediately by its complementary operation. This structural continuity helps build a cohesive understanding of number relationships, making it ideal for review sessions or introductory lessons on multi-digit operations.
+
+## Scenario: Managing Cognitive Load with Sequential Pacing
+
+The "hide-behind-the-mask" transition used in both halves of the animation ensures that the screen never becomes cluttered with old information. As each step's reasoning panel slides off-screen, it is masked, signaling to the student that the step is complete and their attention should Shift to the next. This controlled delivery is particularly effective for students who struggle with organizational complexity in mathematics.
+
+---
+
+# Scene Initialization and Structural Framing
+
+The scene (FinalScene) begins with a professional dark background (#1b1b1b). It uses a dynamic text-wrapping utility function (`wrap_text_dynamic`) to ensure that all on-screen explanations are perfectly sized for the workspace.
+
+The screen is logically divided by a central vertical guide. The left workspace is reserved for the stable mathematical structures (the Division bracket and the Multiplication table), while the right workspace is a transient channel for instructional steps.
+
+---
+
+# Long Division Animation Flow (Sections 1-6)
+
+## Layout Initialization
+The animation begins by establishing the long division bracket for 105 ÷ 5. It explicitly labels the place values (Hundreds, Tens, Ones) to maintain alignment. A masking rectangle is placed over the left side to facilitate clean transitions for the right-side reasoning panels.
+
+## Step-by-Step Execution
+1. **Hundreds/Tens Step**: The panel explains why '1' is combined with '0' to form '10'. A yellow highlight box emphasizes the digits being divided.
+2. **Division & Subtraction**: The quotient is updated with '2', and the subtraction work (10 - 10) is shown step-by-step.
+3. **The Bring Down**: The ones digit ('5') is highlighted and animated downward using an arrow, showing exactly how it joins the remainder.
+4. **Final Quotient**: The final '1' is added to the quotient, and the complete answer (21) is highlighted and centered.
+
+---
+
+# Transition and Multiplication Animation Flow (Sections 7-12)
+
+## Workspace Reset
+After the division process concludes, all elements are faded out to provide a fresh "blank slate" for the next topic. 
+
+## Multiplication Table Setup
+The layout shifts to a multi-digit multiplication format (144 × 28). Place value headers (Th, H, T, O) are redefined to accommodate the larger result.
+
+## Step-by-Step Multiplication
+1. **Step 1 (Ones)**: Multiplying 144 by 8. Partial products and carry digits (3 tens, 3 hundreds) are shown in yellow/orange.
+2. **Step 2 (Tens)**: Multiplying 144 by 20. A placeholder zero is indicated in orange to emphasize the tens-place shift.
+3. **Step 3 (Addition)**: The two partial products (1152 and 2880) are highlighted and added together sequentially with carry indicators.
+
+---
+
+# Final Conclusion and Workspace Management
+
+The animation concludes by clearing the complex workspace and repositioning the final multiplication result (4032) to the center of the frame. A final "So..." statement presents the complete equation, providing a strong top-to-bottom logical flow that summarizes the lesson.
+
+The scene returns to the empty dark background after a final summary pause, reinforcing closure of the multi-topic lesson.
